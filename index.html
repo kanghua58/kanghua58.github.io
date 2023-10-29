@@ -1,223 +1,107 @@
-
 <!DOCTYPE html>
-<html>
-<title>绝不休学(nevershowfear.cn)</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://7npmedia.w3cschool.cn/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      <i class="fa fa-remove"></i>
-    </a>
-    <img src="https://s3.bmp.ovh/imgs/2021/12/25370cbda4c33866.png" style="width:45%;" class="w3-round"><br><br>
-    <h4><b>康寻酱</b></h4>
-    <p class="w3-text-grey">外语教练 深入群众生活的文艺青年 绝不休学小编</p>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>作品集</a>
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>关于</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>联系</a>
-  </div>
-  <div class="w3-panel w3-large">
-    <a href="https://www.linkedin.com/in/kanghua-q-314177199/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-  </div>
-</nav>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-
-  <!-- Header -->
-  <header id="portfolio">
-    <a href="#"><img src="https://s3.bmp.ovh/imgs/2021/12/25370cbda4c33866.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <div class="w3-container">
-    <h1><b>ARCHIVE</b></h1>
-    <div class="w3-section w3-bottombar w3-padding-16">
-      <span class="w3-margin-right">FILTER</span>
-      <button class="w3-button w3-black">ALL</button>
-      <button class="w3-button w3-white"><i class="fa fa-diamond w3-margin-right"></i>Design</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-photo w3-margin-right"></i>Gallary</button>
-      <button class="w3-button w3-white w3-hide-small"><i class="fa fa-map-pin w3-margin-right"></i>Learning</button>
-    </div>
-    </div>
-  </header>
-
-  <!-- First Photo Grid-->
-   <div class="w3-row-padding">
-     <div class="w3-third w3-container w3-margin-bottom">
-       <img src="https://uploadfile.bizhizu.cn/2014/1119/20141119110556976.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-       <div class="w3-container w3-white">
-         <p><b>避风港</b></p>
-         <p>给孩子属于他的一块小天地，让他可以无拘无束地认真做事情，拆玩具拧螺丝看书躺着吃大大卷……</p>
-       </div>
-     </div>
-     <div class="w3-third w3-container w3-margin-bottom">
-       <img src="https://th.bing.com/th/id/R.2cdb9d4ef134e49f32b9bfa86ccf329a?rik=sCsFbhDCaeRtcw&pid=ImgRaw&r=0" alt="Norway" style="width:100%" class="w3-hover-opacity">
-       <div class="w3-container w3-white">
-         <p><b>一同参与</b></p>
-         <p>身体力行告诉孩子，教育与学习是一个无限的游戏，家长不要在于一时与其他孩子与兄弟姐妹的比较，不要过多痴迷阅读、数学水平和考试分数。教孩子玩这个无限游戏，只能通过自己一同参与来教会他。</p>
-       </div>
-     </div>
-     <div class="w3-third w3-container">
-       <img src="https://uploadfile.bizhizu.cn/2014/1118/20141118045154758.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-       <div class="w3-container w3-white">
-         <p><b>为自己负责</b></p>
-         <p>学习是自己的事情，不是家长的事情，也不是老师的事情，我们需要学会对自己的言行负责。</p>
-       </div>
-     </div>
-   </div>
-
-   <!-- Second Photo Grid-->
-   <div class="w3-row-padding">
-     <div class="w3-third w3-container w3-margin-bottom">
-       <img src="https://th.bing.com/th/id/R.985a76b0a4f966558409d8bb4e266fc2?rik=whWKgF7aCYBMuQ&riu=http%3a%2f%2fp0.ifengimg.com%2fpmop%2f2018%2f0624%2fC3F42B67A8CBCB6881EBB387CCC1C100E78E2A83_size209_w1024_h768.jpeg&ehk=2p3h7RiPD0JqgccgDFDAecIkPQGFSah8XbM6E0CkAAg%3d&risl=&pid=ImgRaw&r=0" alt="Norway" style="width:100%" class="w3-hover-opacity">
-       <div class="w3-container w3-white">
-         <p><b>人生马拉松</b></p>
-         <p>不要接受培训机构说的赢在起跑线上的鬼话，那是鼓励你去消费的短跑人生隐喻，人生应该是一段马拉松，前跑线跑赢你，但不代表他们能以后也能跑赢你，事实上，大部分人都不能坚持。</p>
-
-       </div>
-     </div>
-     <div class="w3-third w3-container w3-margin-bottom">
-       <img src="https://th.bing.com/th/id/R.f0573af7776c5b8d385d2dc07d90f13e?rik=Ufad485CER%2b7ng&riu=http%3a%2f%2fuploadfile.bizhizu.cn%2f2014%2f1119%2f20141119020740537.jpg&ehk=JrRmkL%2bI38PUjeQd%2bvWiZVh8C5iN00llrKMuCUJyels%3d&risl=&pid=ImgRaw&r=0" alt="Norway" style="width:100%" class="w3-hover-opacity">
-       <div class="w3-container w3-white">
-         <p><b>允许犯错</b></p>
-         <p>我必须假定我的孩子会沉迷，沉迷游戏，沉迷网络小说。所有的沉迷都是成长的必经之路，父母必须做好相应的准备，而不必假装自己的孩子不是平凡人。</p>
-
-       </div>
-     </div>
-     <div class="w3-third w3-container">
-       <img src="https://uploadfile.bizhizu.cn/2014/0703/20140703074914783.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-       <div class="w3-container w3-white">
-         <p><b>保护学习的兴趣</b></p>
-         <p>学习是持续一生的事情，超越别人不重要，不断超越自我更值得鼓励。家庭教育最重要的事情就是不要让孩子失去学习的兴趣，那是无法挽回的失败。</p>
-       </div>
-     </div>
-   </div>
-
-   <!-- Pagination -->
-   <div class="w3-center w3-padding-32">
-     <div class="w3-bar">
-       <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-       <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-       <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-       <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-       <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-       <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-     </div>
-   </div>
-
-
-  <!-- Images of Me -->
-  <div class="w3-row-padding w3-padding-16" id="about">
-
-    <div class="w3-col m6">
-
-    </div>
-  </div>
-
-  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <h4><b>关于我</b></h4>
-        <p>我是康寻酱，是一名学习设计师和外语教练，我曾在北京大学外国语学院学习和工作5年，我希望建立一个平台，帮助任何没有外语学习经验的朋友比较轻松地学习增益对外交流和信息获取的外语工具。</p>
-        <p>绝不休学我们创建的第一个网络空间，我们希望访问这里的你可以和我们一起成为积极行动、真诚勇敢的学习者。万物生长，各自高贵。每个人都拥有未被发掘的潜力，加以磨练，我们都有能力获得饱满而自足的人生。</p>
-        <br>
-        <p>Hello, I'm Kang, a learning designer, language coach and life artist. I have studied and worked at Peking University's School of Foreign Languages for 5 years. I wish to host a party to help inexperienced learners in foreign languagea communicate and aquicre information more efficiently using language tools.</p>
-
-        <p>Never Show Fear is the first cyber space I built with my partner. We hope to encourage you to be courageous and proactive on the road of outperforming the old self. As sentient beings, we all have the potential to flourish.</p><hr>
-
-    <h4>Skills</h4>
-    <!-- Progress bars / Skills -->
-    <p>Passion</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:100%">100%</div>
-    </div>
-    <p>Curiosity</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:100%">100%</div>
-    </div>
-    <p>Empathy</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-dark-grey w3-padding w3-center" style="width:100%">100%</div>
-    </div>
-    <hr>
-
-
-
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-large w3-grey">
-    <h4 id="contact"><b>Getting in touch</b></h4>
-    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
-      <div class="w3-third w3-dark-grey">
-        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-        <p>kanghua58@gmail.com</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./image/icon.png" />
+    <title>KAY QIU | about</title>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <span class="name">KAY QIU</span>
+      <ul class="navbar">
+        <li class="nav-item"><a href="https://kanguru.vercel.app/">work</a></li>
+        <li class="nav-item" id="nav-about"><a href="#">about</a></li>
+        <li class="nav-item">
+          <a href="http://kanguru.top/files/Kay%20Qiu.pdf">resume</a>
+        </li>
+      </ul>
+    </header>
+    <div class="line">line</div>
+    <main>
+      <div class="col9 self-intro">
+        <p>Hi, This is Kay!</p>
+        <p>
+          I am a polyglot fluent in Chinese, English, Japanese, and Korean and
+          currently a master's student learning
+          <a href="https://metals.hcii.cmu.edu/">Educational Technology</a>
+          at
+          <a href="https://www.hcii.cmu.edu/research"
+            >Human-Computer Interaction Institute</a
+          >
+          at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>.
+        </p>
+        <p>
+          I came from a background in foreign language and literature and worked
+          as a part-time language Teacher teaching English, Chinese, and Korean
+          to learners across all age groups.
+        </p>
+        <p>
+          Limited success in most language learning experiences can also be
+          attributed to problems in learning material, execution, and feedback.
+          However, with technology, it would be possible to assess learners’
+          current skills via self-adaptive placement tests, align them with
+          texts and exercise questions at an appropriate level, and give them
+          timely feedback on diction and grammar after each output. By driving
+          the learning process based on learners’ data, we can make learning
+          highly relevant to learners’ interests and tailored to their current
+          levels and expected goals. At CMU, I dive into the theories behind and
+          the approaches to data-informed learning.
+        </p>
+        <p>
+          I am eager to collaborate with organizations and individuals who share
+          my values. If you're exploring potential partnerships, please
+          <a href="https://www.linkedin.com/in/kanghua-kay-q-314177199"
+            >get in touch!</a
+          >
+        </p>
       </div>
-      <div class="w3-third w3-teal">
-        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
-        <p>Beijing, China</p>
+      <div class="col6 profile-image">
+        <img src="image/profile image.jpg" alt="" />
+        <ul class="contact">
+          <li class="contact-item">
+            <a href="mailto:kanghua58@gmail.com">Email</a>
+          </li>
+          <li class="contact-item">
+            <a href="http://kanguru.top/files/Kay%20Qiu.pdf">Resume</a>
+          </li>
+          <li class="contact-item">
+            <a href="https://www.linkedin.com/in/kanghua-kay-q-314177199"
+              >LinkedIn</a
+            >
+          </li>
+          <li class="contact-item">
+            <a href="https://www.instagram.com/phawaiice/">Instagram</a>
+          </li>
+          <li class="contact-item">
+            <a href="https://space.bilibili.com/13065669">Bilibili</a>
+          </li>
+        </ul>
       </div>
-      <div class="w3-third w3-dark-grey">
-        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
-        <p>+86 18811763958</p>
-      </div>
-    </div>
-    <hr class="w3-opacity">
-    <form action="/action_page.php" target="_blank">
-      <div class="w3-section">
-        <label>Name</label>
-        <input class="w3-input w3-border" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">
-        <label>Email</label>
-        <input class="w3-input w3-border" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">
-        <label>Message</label>
-        <input class="w3-input w3-border" type="text" name="Message" required>
-      </div>
-      <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>SEND</button>
-    </form>
-  </div>
-
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-dark-grey">
-  <div class="w3-row-padding">
-
-      <h3>Tags</h3>
-      <p>
-        <span class="w3-tag w3-black w3-margin-bottom">LEARNING</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">TRAVEL</span> <span class="w3-tag w3-grey w3-small w3-margin-bottom">PSYCHOLOGY</span>
-    </p>
-    </div>
-
-  </div>
-  </footer>
-
-
-<!-- End page content -->
-</div>
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
-}
-
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-
-</body>
+    </main>
+    <footer>
+      <div class="pattent">&copy;KAY QIU 2023</div>
+      <ul class="contact">
+        <li class="contact-item">
+          <a href="mailto:kanghua58@gmail.com">Email</a>
+        </li>
+        <li class="contact-item">
+          <a href="http://kanguru.top/files/Kay%20Qiu.pdf">Resume</a>
+        </li>
+        <li class="contact-item">
+          <a href="https://www.linkedin.com/in/kanghua-kay-q-314177199"
+            >LinkedIn</a
+          >
+        </li>
+        <li class="contact-item">
+          <a href="https://www.instagram.com/phawaiice/">Instagram</a>
+        </li>
+        <li class="contact-item">
+          <a href="https://space.bilibili.com/13065669">Bilibili</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
 </html>
