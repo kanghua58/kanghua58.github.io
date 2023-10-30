@@ -444,6 +444,11 @@ a:active {
   }
 }
 
+span {
+  background-color: inherit;
+  color: inherit;
+}
+
 @media screen and (max-width: 860px) {
   .col9,
   .col6 {
