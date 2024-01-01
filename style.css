@@ -142,7 +142,7 @@ a {
 
 :root {
   --MAIN-BACKGROUND: #fff;
-  --MAIN-FONTCOLOR: #000;
+  --MAIN-FONTCOLOR: #333;
   --FOOTER-BACKGROUND: #1f1f1f;
   --FOOTER-FONTCOLOR: #fff;
   --BORDER-COLOR: #dfdfdf;
@@ -209,11 +209,10 @@ header .name {
   margin: 0 auto;
 }
 
-main {
+section {
   display: flex;
   padding-top: 120px;
   color: var(--MAIN-FONTCOLOR);
-  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
@@ -226,6 +225,7 @@ main {
 main a {
   text-decoration: underline;
 }
+
 .self-intro {
   line-height: 1.35em;
   letter-spacing: 0.5px;
@@ -381,6 +381,65 @@ a:active {
   padding: 1rem;
 }
 
+span {
+  background-color: inherit;
+  color: inherit;
+}
+
+/* Work Section Styles */
+#work {
+  display: flex;
+  padding: 100px 20px 80px 20px;
+  color: var(--MAIN-FONTCOLOR);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  width: 87.33333333%;
+  max-width: 1000px;
+  background: var(--MAIN-BACKGROUND);
+  margin: 0 auto 1rem auto;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2em;
+  align-items: center;
+  min-height: 240px;
+  line-height: 1.35em;
+}
+
+.project-description {
+  flex-basis: 50%;
+  padding-right: 1em;
+}
+
+.project-image {
+  flex-basis: 50%;
+  text-align: right;
+  margin-top: 60px;
+}
+
+.project-image img {
+  max-width: 80%;
+  height: 220px;
+  object-fit: cover;
+  width: auto;
+  height: auto;
+}
+
+.project-meta {
+  font-style: italic;
+  color: var(--LINK-HOVER);
+  margin-bottom: 1em;
+}
+
+h2 {
+  margin: 20px 0px;
+  color: var(--MAIN-FONTCOLOR);
+  font-size: 2em;
+}
+
 /* USER COLOR THEME  */
 /* when the user prefers dark theme */
 @media (prefers-color-scheme: dark) {
@@ -444,11 +503,6 @@ a:active {
   }
 }
 
-span {
-  background-color: inherit;
-  color: inherit;
-}
-
 @media screen and (max-width: 860px) {
   .col9,
   .col6 {
@@ -468,4 +522,31 @@ span {
   .self-intro {
     margin-right: 0px;
   }
+
+  .project {
+    flex-direction: column;
+  }
+
+  .project-description,
+  .project-image {
+    flex-basis: 100%;
+  }
+
+  .project-image {
+    margin-top: 1em;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .project-image img {
+    max-width: 100%;
+  }
+}
+
+.active-nav-item {
+  text-decoration: underline !important;
+  text-decoration-color: var(--LINK-ACTIVE);
+  text-decoration-thickness: 3px;
+  color: var(--LINK-ACTIVE);
 }

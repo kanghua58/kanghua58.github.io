@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="./image/icon.png" />
     <title>KAY QIU | about</title>
-    <script src="main.js"></script>
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -19,82 +18,146 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-K5BHE7RETG");
   </script>
   <body>
     <header>
       <span class="name">KAY QIU</span>
       <ul class="navbar">
+        <li class="nav-item"><a href="#about">about</a></li>
+        <li class="nav-item"><a href="#work">work</a></li>
         <li class="nav-item"><a href="https://kanguru.vercel.app/">blog</a></li>
-        <li class="nav-item" id="nav-about"><a href="#">about</a></li>
         <li class="nav-item">
           <a href="./files/Kay Qiu.pdf">resume</a>
         </li>
       </ul>
     </header>
     <div class="line">line</div>
+
     <main>
-      <div class="col9 self-intro">
-        <p>Hi, This is Kay!</p>
-        <p>
-          I am a polyglot fluent in Chinese, English, Japanese, and Korean and
-          currently a master's student learning
-          <a href="https://metals.hcii.cmu.edu/">Educational Technology</a>
-          at
-          <a href="https://www.hcii.cmu.edu/research"
-            >Human-Computer Interaction Institute</a
-          >
-          at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>.
-        </p>
-        <p>
-          I came from a background in foreign language and literature and worked
-          as a part-time language teacher teaching English, Chinese, and Korean
-          to learners across all age groups.
-        </p>
-        <p>
-          Limited success in most language learning experiences can also be
-          attributed to problems in learning material, execution, and feedback.
-          However, with technology, it would be possible to assess learners’
-          current skills via self-adaptive placement tests, align them with
-          texts and exercise questions at an appropriate level, and give them
-          timely feedback on diction and grammar after each output. By driving
-          the learning process based on learners’ data, we can make learning
-          highly relevant to learners’ interests and tailored to their current
-          levels and expected goals. At CMU, I dive into the theories behind and
-          the approaches to data-informed learning.
-        </p>
-        <p>
-          I am eager to collaborate with organizations and individuals who share
-          my values. If you're exploring potential partnerships, please
-          <a href="https://www.linkedin.com/in/kanghua-kay-q-314177199"
-            >get in touch!</a
-          >
-        </p>
-      </div>
-      <div class="col6 profile-image">
-        <img src="image/profile image.jpg" alt="" />
-        <ul class="contact">
-          <li class="contact-item">
-            <a href="mailto:kanghua58@gmail.com">Email</a>
-          </li>
-          <li class="contact-item">
-            <a href="./files/Kay Qiu.pdf">Resume</a>
-          </li>
-          <li class="contact-item">
-            <a href="https://www.linkedin.com/in/kanghua-kay-q-314177199"
-              >LinkedIn</a
+      <!-- intro -->
+      <section id="about">
+        <div class="col9 self-intro">
+          <p>Hi, This is Kay!</p>
+          <p>
+            I am a polyglot fluent in Chinese, English, Japanese, and Korean and
+            currently a master's student learning
+            <a href="https://metals.hcii.cmu.edu/">Educational Technology</a>
+            at
+            <a href="https://www.hcii.cmu.edu/research"
+              >Human-Computer Interaction Institute</a
             >
-          </li>
-          <li class="contact-item">
-            <a href="https://www.instagram.com/phawaiice/">Instagram</a>
-          </li>
-          <li class="contact-item">
-            <a href="https://space.bilibili.com/13065669">Bilibili</a>
-          </li>
-        </ul>
-      </div>
+            at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>.
+          </p>
+          <p>
+            I came from a background in foreign language and literature and
+            worked as a part-time language teacher teaching English, Chinese,
+            and Korean to learners across all age groups.
+          </p>
+          <p>
+            Limited success in most language learning experiences can also be
+            attributed to problems in learning material, execution, and
+            feedback. However, with technology, it would be possible to assess
+            learners’ current skills via self-adaptive placement tests, align
+            them with texts and exercise questions at an appropriate level, and
+            give them timely feedback on diction and grammar after each output.
+            By driving the learning process based on learners’ data, we can make
+            learning highly relevant to learners’ interests and tailored to
+            their current levels and expected goals. At CMU, I dive into the
+            theories behind and the approaches to data-informed learning.
+          </p>
+          <p>
+            I am eager to collaborate with organizations and individuals who
+            share my values. If you're exploring potential partnerships, please
+            <a href="https://www.linkedin.com/in/kanghua-kay-q-314177199"
+              >get in touch!</a
+            >
+          </p>
+        </div>
+        <div class="col6 profile-image">
+          <img src="image/profile image.jpg" alt="" />
+          <ul class="contact">
+            <li class="contact-item">
+              <a href="mailto:kanghua58@gmail.com">Email</a>
+            </li>
+            <li class="contact-item">
+              <a href="./files/Kay Qiu.pdf">Resume</a>
+            </li>
+            <li class="contact-item">
+              <a href="https://www.linkedin.com/in/kanghua-kay-q-314177199"
+                >LinkedIn</a
+              >
+            </li>
+            <li class="contact-item">
+              <a href="https://www.instagram.com/phawaiice/">Instagram</a>
+            </li>
+            <li class="contact-item">
+              <a href="https://space.bilibili.com/13065669">Bilibili</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Work Section -->
+      <section id="work">
+        <!-- Project -->
+        <div class="project aiuser">
+          <div class="project-description">
+            <h2>AI User</h2>
+            <div class="project-meta">LEARNING DESIGN / UI DESIGN</div>
+            <p>
+              The AI User course is a course on the SAIL() Learning Platform
+              that perpare leaners to be better AI users. I worked as a learning
+              engineer at the Teel Lab to design and develop hands-on immersive
+              projects for the course.
+            </p>
+          </div>
+          <div class="project-image">
+            <img src="./image/hero-aiuser.png" alt="AI User Project Image" />
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div class="project petsphere">
+          <div class="project-description">
+            <h2>PetSphere</h2>
+            <div class="project-meta">DESIGN SYSTEMS / FULL-STACK DEV</div>
+            <p>
+              PetSphere is a pet community social web application that connects
+              pet owners and pet service providers. I worked as a UI designer
+              and front-end/back-end developer for the project.
+            </p>
+          </div>
+          <div class="project-image">
+            <img
+              src="./image/hero_petsphere.png"
+              alt="PetSphere Project Image"
+            />
+          </div>
+        </div>
+
+        <!-- Project -->
+        <div class="project bikelink">
+          <div class="project-description">
+            <h2>BikeLink Pro</h2>
+            <div class="project-meta">DESIGN SYSTEMS / INTERACTION DESIGN</div>
+            <p>
+              A semi-autonomous e-bike with interfaces that employs
+              human-centered design methodologies and principles of typography,
+              color, and composition to set paradigms for interactions.
+            </p>
+          </div>
+          <div class="project-image">
+            <img
+              src="./image/hero_bikelink.png"
+              alt="BikeLinkPro Project Image"
+            />
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- footer -->
     <footer>
       <div class="pattent">
         &copy;KAY QIU <span id="current-year">2023</span>
@@ -119,5 +182,6 @@
         </li>
       </ul>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>
