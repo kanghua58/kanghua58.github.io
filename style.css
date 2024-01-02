@@ -526,11 +526,12 @@ h2 {
 
   .navbar li a {
     letter-spacing: 1px;
-    font-size: 0.9em;
+    font-size: 0.75em;
   }
 
   p {
-    font-size: 0.85em;
+    font-size: 0.7em;
+    line-height: 1.35em;
   }
 }
 
@@ -545,7 +546,7 @@ h2 {
   }
   footer .contact li a {
     letter-spacing: 1px;
-    font-size: 0.7em;
+    font-size: 0.6em;
   }
   footer .contact li {
     margin-right: 5px;
