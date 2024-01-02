@@ -147,7 +147,7 @@ a {
   --FOOTER-FONTCOLOR: #fff;
   --BORDER-COLOR: #dfdfdf;
   --LINK-HOVER: #5c5c5c;
-  --LINK-ACTIVE: #9c9c9c;
+  --LINK-ACTIVE: #333;
 }
 
 html * {
@@ -449,8 +449,8 @@ h2 {
     --FOOTER-BACKGROUND: #ffffff;
     --FOOTER-FONTCOLOR: #000000;
     --BORDER-COLOR: #373737;
-    --LINK-HOVER: #9c9c9c;
-    --LINK-ACTIVE: #c6c6c6;
+    --LINK-HOVER: #cfcdcd;
+    --LINK-ACTIVE: #fff;
   }
 }
 
