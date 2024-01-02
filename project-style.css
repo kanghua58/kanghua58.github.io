@@ -166,7 +166,6 @@ header {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 20px;
-  z-index: 10;
 }
 
 header .name {
@@ -225,42 +224,6 @@ section {
 
 main a {
   text-decoration: underline;
-}
-
-.self-intro {
-  line-height: 1.35em;
-  letter-spacing: 0.5px;
-  margin-right: 50px;
-}
-
-.self-intro p {
-  margin-bottom: 20px;
-}
-
-.profile-image {
-  text-align: left;
-}
-.profile-image img {
-  width: 100%;
-}
-
-.profile-image .contact {
-  display: flex;
-  padding-top: 10px;
-  list-style-type: none;
-  justify-content: space-around;
-}
-
-.profile-image .contact li {
-  display: inline-block;
-  margin-right: 10px;
-}
-.profile-image .contact li a {
-  letter-spacing: 1px;
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 0.6em;
-  transition: opacity 400ms;
 }
 
 footer {
