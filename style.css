@@ -407,6 +407,13 @@ span {
   align-items: center;
   min-height: 240px;
   line-height: 1.35em;
+  transition: filter 0.3s ease;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+
+.project:hover {
+  filter: grayscale(0);
 }
 
 .project-description {
@@ -438,6 +445,10 @@ h2 {
   margin: 20px 0px;
   color: var(--MAIN-FONTCOLOR);
   font-size: 2em;
+}
+
+.custom-cursor {
+  cursor: url("./image/icon.png"), auto;
 }
 
 /* USER COLOR THEME  */
