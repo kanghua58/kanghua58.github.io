@@ -409,7 +409,6 @@ span {
   line-height: 1.35em;
   transition: filter 0.3s ease;
   filter: grayscale(100%);
-  cursor: pointer;
 }
 
 .project:hover {
@@ -448,7 +447,7 @@ h2 {
 }
 
 .custom-cursor {
-  cursor: url("./image/icon.png"), auto;
+  cursor: url("./image/K-light.png"), auto;
 }
 
 /* USER COLOR THEME  */
@@ -462,6 +461,10 @@ h2 {
     --BORDER-COLOR: #373737;
     --LINK-HOVER: #cfcdcd;
     --LINK-ACTIVE: #fff;
+  }
+
+  .custom-cursor {
+    cursor: url("./image/K-dark.png"), auto;
   }
 }
 
