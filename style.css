@@ -485,6 +485,28 @@ h2 {
     left: 0px;
     right: 0px;
   }
+
+  section {
+    margin-left: 16px;
+    margin-right: 0;
+    padding-right: 10px;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  #work {
+    margin-left: 16px;
+    margin-right: 0;
+    padding-right: 0;
+    width: 95%;
+  }
+
+  .project,
+  .project-description p,
+  .project-image img {
+    margin-right: 0;
+    padding-right: 0;
+  }
 }
 
 @media screen and (max-width: 660px) {
