@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // 获取所有导航链接
     const navItems = document.querySelectorAll('.nav-item a');
+    const internalLinks = document.querySelectorAll('.nav-item a[href^="#"]'); // Select only internal links
     const sections = document.querySelectorAll('section');
     const aboutSection = document.getElementById('about');
     const workSection = document.getElementById('work');
@@ -22,13 +23,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // 添加平滑滚动
-    navItems.forEach(navItem => {
-        navItem.addEventListener('click', function(e) {
+    internalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
+                // Add active class when clicked
+                addActiveClass(targetId);
             }
         });
     });
