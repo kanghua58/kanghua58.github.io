@@ -53,7 +53,7 @@
       </div>
       <ul class="contact">
         <li class="contact-item">
-          <a href="mailto:kanghua58@gmail.com">Email</a>
+          <a href="mailto:kanghua58@gmail.com" target="_blank">Email</a>
         </li>
         <li class="contact-item">
           <a href="https://www.linkedin.com/in/kanghua-kay-q-314177199"
@@ -61,10 +61,14 @@
           >
         </li>
         <li class="contact-item">
-          <a href="https://www.instagram.com/phawaiice/">Instagram</a>
+          <a href="https://www.instagram.com/phawaiice/" target="_blank"
+            >Instagram</a
+          >
         </li>
         <li class="contact-item">
-          <a href="https://space.bilibili.com/13065669">Bilibili</a>
+          <a href="https://space.bilibili.com/13065669" target="_blank"
+            >Bilibili</a
+          >
         </li>
       </ul>
     </footer>

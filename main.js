@@ -1,19 +1,17 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    // 获取所有导航链接
+    // Code related to navigation links and sections
     const navItems = document.querySelectorAll('.nav-item a');
-    const internalLinks = document.querySelectorAll('.nav-item a[href^="#"]'); // Select only internal links
+    const internalLinks = document.querySelectorAll('.nav-item a[href^="#"]');
     const sections = document.querySelectorAll('section');
     const aboutSection = document.getElementById('about');
     const workSection = document.getElementById('work');
 
-    // 移除活跃类
     function removeActiveClasses() {
         navItems.forEach(navItem => {
             navItem.classList.remove('active-nav-item');
         });
     }
 
-    // 添加活跃类
     function addActiveClass(hash) {
         removeActiveClasses();
         const navItem = document.querySelector(`.nav-item a[href="${hash}"]`);
@@ -22,7 +20,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // 添加平滑滚动
     internalLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -30,41 +27,74 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const targetSection = document.querySelector(targetId);
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
-                // Add active class when clicked
                 addActiveClass(targetId);
             }
         });
     });
 
-    // 滚动时更新导航项状态
-    window.addEventListener('scroll', () => {
+    
+    function setActiveNavLink() {
         const scrollPosition = window.scrollY;
-        let inSection = false;
-
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 50; // 50px offset for better activation timing
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            const navLink = document.querySelector(`.nav-item a[href="#${sectionId}"]`);
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                // Add active class
+                navLink.classList.add('active-nav-item');
+            } else {
+                // Remove active class
+                navLink.classList.remove('active-nav-item');
+            }
+        });
+    }
+
+    // Scroll event to update the navigation links
+    window.addEventListener('scroll', setActiveNavLink);
+
+    // Click event for internal navigation links
+    navItems.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if the clicked link is an internal link
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    // Scroll to the target section
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    // Set active navigation link after scrolling
+                    setTimeout(setActiveNavLink, 500); // Timeout for scroll to complete
+                }
+            }
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        let inSection = false;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 200;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                 addActiveClass(`#${sectionId}`);
                 inSection = true;
             }
         });
-
-        // 如果当前滚动位置不在任何区域内，则移除活跃类
-        if (!inSection) {
-            removeActiveClasses();
-        }
+        if (!inSection) removeActiveClasses();
     });
 
-    // 初始激活检查
     if (window.scrollY >= aboutSection.offsetTop && window.scrollY < workSection.offsetTop) {
         addActiveClass('#about');
     } else if (window.scrollY >= workSection.offsetTop) {
         addActiveClass('#work');
     }
+
+    // Set the current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    console.log("success");
 });
-
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
-console.log("success");
