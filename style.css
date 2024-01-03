@@ -446,7 +446,7 @@ span {
 h2 {
   margin: 20px 0px;
   color: var(--MAIN-FONTCOLOR);
-  font-size: 2em;
+  font-size: 1.6em;
 }
 
 .custom-cursor {
@@ -541,9 +541,23 @@ h2 {
     justify-content: space-around;
   }
 
+  .navbar li {
+    padding: 0;
+    margin: 0;
+  }
+
   .navbar li a {
-    letter-spacing: 1px;
+    letter-spacing: 0;
     font-size: 0.75em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    line-height: 0.8em;
+  }
+
+  .project-meta {
+    font-size: 0.9em;
   }
 
   p {
