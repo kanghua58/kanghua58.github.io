@@ -453,6 +453,52 @@ h2 {
   cursor: url("./image/K-light.png"), auto;
 }
 
+#bullet {
+  display: flex;
+  padding: 0;
+  color: var(--MAIN-FONTCOLOR);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  width: 87.33333333%;
+  max-width: 1000px;
+  background: var(--MAIN-BACKGROUND);
+  margin: 0 auto 1rem auto;
+}
+
+.bullet-column h3 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: var(--MAIN-FONTCOLOR);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.bullet-column ul {
+  list-style: circle;
+  padding: 0;
+  margin: 0;
+}
+
+.bullet-column ul li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: var(--MAIN-FONTCOLOR);
+}
+
+@media screen and (max-width: 992px) {
+  .bullet-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bullet-column {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
 /* USER COLOR THEME  */
 /* when the user prefers dark theme */
 @media (prefers-color-scheme: dark) {
