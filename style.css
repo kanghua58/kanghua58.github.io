@@ -393,7 +393,7 @@ span {
 /* Work Section Styles */
 #work {
   display: flex;
-  padding: 100px 20px 80px 20px;
+  padding: 100px 20px 0px 20px;
   color: var(--MAIN-FONTCOLOR);
   display: flex;
   flex-wrap: wrap;
@@ -442,6 +442,11 @@ span {
   font-style: italic;
   color: var(--LINK-HOVER);
   margin-bottom: 1em;
+}
+
+.project:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -528,9 +533,96 @@ h2 {
 }
 
 /* MEDIA QUERIES */
+
+@media screen and (max-width: 860px) {
+  .col9,
+  .col6 {
+    width: 100%;
+  }
+  .profile-image .contact {
+    display: none;
+    color: transparent;
+  }
+  footer .contact li a {
+    letter-spacing: 1px;
+    font-size: 0.6em;
+  }
+  footer .contact li {
+    margin-right: 5px;
+  }
+  .self-intro {
+    margin-right: 0px;
+  }
+
+  .project {
+    flex-direction: column;
+  }
+
+  .project-description,
+  .project-image {
+    flex-basis: 100%;
+  }
+
+  .project-image {
+    margin-top: 1em;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .project-image img {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  footer .pattent {
+    display: none;
+    color: transparent;
+  }
+
+  footer {
+    justify-content: center;
+  }
+
+  footer .contact {
+    margin-left: 80px;
+    justify-content: space-around;
+  }
+
+  .navbar li {
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar li a {
+    letter-spacing: 0;
+    font-size: 0.75em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+    line-height: 0.8em;
+  }
+
+  .project-meta {
+    font-size: 0.9em;
+  }
+
+  p {
+    font-size: 0.9em;
+    line-height: 1.35em;
+  }
+
+  .bullet-column h3,
+  .bullet-column ul li {
+    font-size: 0.9rem;
+  }
+}
+
 @media screen and (max-width: 572px) {
   main {
-    width: 92%;
+    width: 95%;
   }
   .name {
     display: none;
@@ -575,87 +667,6 @@ h2 {
   .project-image img {
     margin-right: 0;
     padding-right: 0;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  footer .pattent {
-    display: none;
-    color: transparent;
-  }
-
-  footer {
-    justify-content: center;
-  }
-
-  footer .contact {
-    margin-left: 80px;
-    justify-content: space-around;
-  }
-
-  .navbar li {
-    padding: 0;
-    margin: 0;
-  }
-
-  .navbar li a {
-    letter-spacing: 0;
-    font-size: 0.75em;
-  }
-
-  h2 {
-    font-size: 1.3em;
-    line-height: 0.8em;
-  }
-
-  .project-meta {
-    font-size: 0.9em;
-  }
-
-  p {
-    font-size: 0.7em;
-    line-height: 1.35em;
-  }
-}
-
-@media screen and (max-width: 860px) {
-  .col9,
-  .col6 {
-    width: 100%;
-  }
-  .profile-image .contact {
-    display: none;
-    color: transparent;
-  }
-  footer .contact li a {
-    letter-spacing: 1px;
-    font-size: 0.6em;
-  }
-  footer .contact li {
-    margin-right: 5px;
-  }
-  .self-intro {
-    margin-right: 0px;
-  }
-
-  .project {
-    flex-direction: column;
-  }
-
-  .project-description,
-  .project-image {
-    flex-basis: 100%;
-  }
-
-  .project-image {
-    margin-top: 1em;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .project-image img {
-    max-width: 100%;
   }
 }
 

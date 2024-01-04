@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet"
     href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-
-
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
     <link rel="stylesheet" href="project-style.css" />
     <link rel="icon" href="./image/icon.png" />
     <title>KAY QIU | PETSPHERE</title>
@@ -121,16 +120,17 @@
         <div class="desciptive-block">
           <div class="subtitle">Front-End Development</div>
           <p>HTML and CSS: These form the core of PetSphere's user interface</p>
-          <pre>
-            <code>
-              <!-- 要插入的html代码 -->
-            </code>
-          </pre>
-          <pre>
-            <code>
-              <!-- 要插入的css代码 -->
-            </code>
-          </pre>
+          <pre><code class="language-html">
+            
+          </code></pre>
+          
+          <pre><code class="language-css">
+         
+          </code></pre>
+          
+          <pre><code class="language-javascript">
+            // JavaScript 代码
+          </code></pre>
 
         <!-- Security Measures -->
         <div class="subtitle">Security Measures</div>
@@ -189,6 +189,14 @@
         </li>
       </ul>
     </footer>
-    <script src="main.js"></script>
+    
+  <script>document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  });
+  </script>
+  
+
   </body>
 </html>
