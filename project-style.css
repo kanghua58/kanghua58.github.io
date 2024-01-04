@@ -556,6 +556,8 @@ code {
   font: "DM Mono", monospace;
   line-height: 1.2em;
   height: 300px;
+  background-color: transparent;
+  color: var(--MAIN-FONTCOLOR);
 }
 
 .image-plus {
@@ -587,6 +589,7 @@ code {
 .fit-cover {
   object-fit: cover;
   height: auto;
+  transform: translateX(34.6%);
 }
 
 @media screen and (max-width: 992px) {
@@ -672,6 +675,11 @@ code {
   .col8 {
     width: 100%;
   }
+
+  .plus-description {
+    padding-left: 0;
+    margin-left: 0;
+  }
   footer .pattent {
     display: none;
     color: transparent;
@@ -708,6 +716,10 @@ code {
   p {
     font-size: 0.9em;
     line-height: 1.35em;
+  }
+
+  code {
+    font-size: 0.9em;
   }
 }
 
