@@ -393,7 +393,7 @@ span {
 /* Work Section Styles */
 #work {
   display: flex;
-  padding: 100px 20px 0px 20px;
+  padding: 50px 20px 80px 20px;
   color: var(--MAIN-FONTCOLOR);
   display: flex;
   flex-wrap: wrap;
@@ -617,6 +617,10 @@ h2 {
   .bullet-column h3,
   .bullet-column ul li {
     font-size: 0.9rem;
+  }
+
+  #work {
+    padding: 80px 20px 20px 20px;
   }
 }
 
