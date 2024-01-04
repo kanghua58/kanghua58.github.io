@@ -608,6 +608,29 @@ code {
   transform: translateX(34.6%);
 }
 
+.role-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.role-list li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  line-height: 1.2em;
+}
+
+.role-list li::before {
+  content: "";
+  position: absolute;
+  left: 0em;
+  top: 0.3em;
+  height: 6px;
+  width: 6px;
+  background-color: var(--HIGHTLIGHT-BLUE); /* Your desired dot color */
+  border-radius: 50%; /* Make it round */
+}
+
 @media screen and (max-width: 992px) {
   .bullet-container {
     flex-direction: column;
@@ -632,7 +655,7 @@ code {
     --LINK-HOVER: #cfcdcd;
     --LINK-ACTIVE: #fff;
     --HIGHTLIGHT-PINK: #f1c2e6;
-    --HIGHTLIGHT-BLUE: #7ab9fc;
+    --HIGHTLIGHT-BLUE: #9fcdff;
   }
 
   .custom-cursor {
