@@ -672,8 +672,17 @@ code {
 }
 
 @media screen and (max-width: 680px) {
-  .col8 {
+  .col6,
+  .col7,
+  .col8,
+  .col9 {
     width: 100%;
+  }
+
+  .fit-cover {
+    object-fit: cover;
+    height: auto;
+    transform: translateX(0);
   }
 
   .plus-description {
