@@ -573,6 +573,10 @@ h2 {
   .project-image img {
     max-width: 100%;
   }
+
+  #work {
+    padding: 80px 20px 20px 20px;
+  }
 }
 
 @media screen and (max-width: 660px) {
@@ -617,10 +621,6 @@ h2 {
   .bullet-column h3,
   .bullet-column ul li {
     font-size: 0.9rem;
-  }
-
-  #work {
-    padding: 80px 20px 20px 20px;
   }
 }
 
