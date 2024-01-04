@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"
-    href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <link rel="stylesheet" href="project-style.css" />
     <link rel="icon" href="./image/icon.png" />
     <title>KAY QIU | PETSPHERE</title>
@@ -120,17 +120,288 @@
         <div class="desciptive-block">
           <div class="subtitle">Front-End Development</div>
           <p>HTML and CSS: These form the core of PetSphere's user interface</p>
-          <pre><code class="language-html">
+
+            <pre><code class="language-html" style="font-family: 'DM Mono';">
+&lt;!-- HTML for Signup --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;PetSphere | Sign-up&lt;/title&gt;
+  &lt;link rel="stylesheet" href="./style.css" /&gt;
+  &lt;style&gt;
+    body {
+      background-image: url("http://localhost/petsphere2/assets/images/backgrounds/bg_animal.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="popup-container"&gt;
+    &lt;div class="signup"&gt;
+      &lt;div class="logo-container"&gt;
+        &lt;a href="./index.php"&gt;
+          &lt;img class="logo" src="http://localhost/petsphere2/assets/images/icons/logo.png" alt=""/&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;form action="signup.php" method="post"&gt;
+        &lt;!-- user input username --&gt;
+        &lt;div class="input-container"&gt;
+          &lt;input type="text" name="username" value="" required /&gt;
+          &lt;label for="username"&gt;Username&lt;/label&gt;
+          &lt;div class="error-message"&gt;&lt;/div&gt;
+          &lt;div class="error-message"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="input-container"&gt;
+          &lt;input type="email" name="email" value="" required /&gt;
+          &lt;label for="email"&gt;Email&lt;/label&gt;
+          &lt;div class="error-message"&gt;&lt;/div&gt;
+          &lt;div class="error-message"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="input-container"&gt;
+          &lt;input type="password" name="password" required /&gt;
+          &lt;label for="password"&gt;Password&lt;/label&gt;
+          &lt;div class="error-message"&gt;&lt;/div&gt;
+          &lt;div class="error-message"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="input-container"&gt;
+          &lt;input type="password" name="confirm_password" required /&gt;
+          &lt;label for="confirm_password"&gt;Confirm Password&lt;/label&gt;
+          &lt;div class="error-message"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;button class="popup-button" type="submit"&gt;Sign up&lt;/button&gt;
+      &lt;/form&gt;
+      &lt;p&gt;Have an account? &lt;a href="login.php" class="popup-link"&gt;Login&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+              </code></pre>
+
+
+              <pre><code class="language-css">
+/* CSS for Login & Signup */
+.error-message {
+  font-size: 12px;
+  padding-top: 2px;
+  padding-left: 3px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: var(--MAIN);
+}
+
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.login,
+.signup {
+  position: fixed;
+  top: 20vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border: 1px solid #cccccc68;
+  border-radius: 18px;
+  width: 300px;
+  padding: 50px;
+}
+
+.popup-container h2 {
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 5px;
+}
+
+form .input-container {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.popup-container input {
+  width: 100%;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 32px;
+  border: 1px solid var(--GRAYLIGHT);
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-family: "Karla";
+}
+
+.popup-container .login input {
+  width: 85%;
+}
+
+.popup-container label {
+  position: absolute;
+  top: 22px;
+  left: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--GRAY);
+  transition: all 0.2s ease-in-out;
+}
+
+.popup-container input:focus + label {
+  top: 0;
+  left: 0;
+  padding-bottom: 20px;
+  font-size: 12px;
+  color: var(--GRAY);
+}
+
+.popup-container input:valid + label {
+  top: 0;
+  left: 0;
+  padding-bottom: 20px;
+  font-size: 12px;
+  color: var(--GRAY);
+}
+
+.popup-container p {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.popup-link {
+  color: var(--MAIN);
+  text-decoration: underline;
+}
+                </code></pre>
+
+                <pre><code class="language-php">
+// Signup Handler
+&lt;?php
+$username = "";
+$email = "";
+$password = "";
+$confirm_password = "";
+$signup_date = date("Y-m-d"); 
+$profile_pic = "";
+$error_array = array(); 
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $_SESSION["username"] = $username;
+
+    $email = $_POST["email"];
+    $_SESSION["email"] = $email;
+
+    $password = $_POST["password"];
+    $confirm_password = $_POST["confirm_password"];
+
+    // verify username length
+    if (strlen($username) &gt; 50 || strlen($username) &lt; 2) {
+        array_push($error_array, "Username must be between 2 and 50 characters&lt;br&gt;");
+    }
+
+    // check if username already exists
+    if ($stmt = $con-&gt;prepare("SELECT username FROM users WHERE username = ?")) {
+        $stmt-&gt;bind_param("s", $username);
+        $stmt-&gt;execute();
+        $result = $stmt-&gt;get_result();
+        $num_rows = $result-&gt;num_rows;
+        $stmt-&gt;close();
+
+        if ($num_rows &gt; 0) {
+            array_push($error_array, "Username already exists&lt;br&gt;");
+        }
+    }
+
+
+
+    // verify email address
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+        // prevent SQL injection
+        $stmt = $con-&gt;prepare("SELECT email FROM users WHERE email = ?");
+        $stmt-&gt;bind_param("s", $email);
+        $stmt-&gt;execute();
+        $result = $stmt-&gt;get_result();
+        $num_rows = $result-&gt;num_rows;
+        $stmt-&gt;close();
+
+        if ($num_rows &gt; 0) {
+            array_push($error_array, "Email already in use&lt;br&gt;");
+        }
+    } else {
+        array_push($error_array, "Invalid email address&lt;br&gt;");
+    }
+
+    // verify password
+    $password_valid = true;
+    if (preg_match('/[^A-Za-z0-9]/', $password)) {
+        array_push($error_array, "Your password can only contain English letters or numbers&lt;br&gt;");
+        $password_valid = false;
+    }
+    
+    if (strlen($password) &gt; 30 || strlen($password) &lt; 5) {
+        array_push($error_array, "Your password must be between 5 and 30 characters&lt;br&gt;");
+        $password_valid = false;
+    }
+
+    if ($password !== $confirm_password) {
+        array_push($error_array, "Passwords did not match&lt;br&gt;");
+        $password_valid = false;
+    }
+
+    // register new user if no errors
+    if (empty($error_array) && $password_valid) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        //profile picture assignment
+        $rand = rand(1,3);
+
+        if($rand == 1){
+          $profile_pic = "http://localhost/petsphere2/assets/images/profile_pics/momo.jpeg";
+        } else if ($rand == 2){
+          $profile_pic = "http://localhost/petsphere2/assets/images/profile_pics/momo1.jpg";
+        } else if ($rand == 3){
+          $profile_pic = "http://localhost/petsphere2/assets/images/profile_pics/momo2.jpg";
+        };
+        
+        // write the data into database
+        $stmt = $con-&gt;prepare("INSERT INTO users (username, email, password, signup_date, profile_pic) VALUES (?, ?, ?, ?, ?)");
+        $stmt-&gt;bind_param("sssss", $username, $email, $hashed_password, $signup_date, $profile_pic);
+        
+        if ($stmt-&gt;execute()) {
+            echo "Welcome to PetSphere!&lt;br&gt;";
+            $_SESSION["username"] = $username;
+            header("Location: index.php");
+            exit();
+
+        } else {
+            echo "Woops, Something went wrong: " . $con-&gt;error;
+        }
+        $stmt-&gt;close();
+    }
+}
+$_SESSION['error_array'] = $error_array;
+?&gt;
+
+&lt;script&gt;
+    console.log($error_array)
+&lt;/script&gt;
+                  </code></pre>
+                  
+              
             
-          </code></pre>
-          
-          <pre><code class="language-css">
-         
-          </code></pre>
-          
-          <pre><code class="language-javascript">
-            // JavaScript 代码
-          </code></pre>
+            
+    
 
         <!-- Security Measures -->
         <div class="subtitle">Security Measures</div>
@@ -189,14 +460,6 @@
         </li>
       </ul>
     </footer>
-    
-  <script>document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll('pre code').forEach((el) => {
-      hljs.highlightElement(el);
-    });
-  });
-  </script>
-  
 
   </body>
 </html>

@@ -23,14 +23,12 @@ h5,
 h6,
 p,
 blockquote,
-pre,
 a,
 abbr,
 acronym,
 address,
 big,
 cite,
-code,
 del,
 dfn,
 em,
@@ -546,12 +544,17 @@ p {
 }
 
 .subtitle {
-  font-size: 1.6em;
+  font-size: 1.3em;
   padding-bottom: 10px;
   padding-top: 10px;
-  font-weight: 700;
   text-transform: capitalize;
   display: block;
+}
+
+code {
+  font: "DM Mono", monospace;
+  line-height: 1.2em;
+  height: 200px;
 }
 
 @media screen and (max-width: 992px) {
@@ -655,7 +658,7 @@ p {
 
   .navbar li a {
     letter-spacing: 0;
-    font-size: 0.75em;
+    font-size: 0.9em;
   }
 
   h2 {
