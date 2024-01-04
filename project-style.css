@@ -495,7 +495,7 @@ h2 {
   line-height: 1.5em;
 }
 
-span.highlight {
+.highlight {
   color: var(--HIGHTLIGHT-PETSPHERE);
   font-weight: 800;
 }
@@ -514,7 +514,7 @@ span.highlight {
   text-transform: uppercase;
 }
 
-#overview h1 {
+#overview {
   margin-top: 20px;
 }
 
@@ -532,8 +532,8 @@ p {
 .title {
   font-size: 2em;
   margin: 0 auto;
-  padding-bottom: 0;
-  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-top: 10px;
   color: var(--HIGHTLIGHT-PETSPHERE);
   font-weight: 700;
   text-transform: uppercase;
@@ -541,6 +541,7 @@ p {
 
 .desciptive-block {
   width: 100%;
+  line-height: 1.2em;
 }
 
 .subtitle {
@@ -554,7 +555,38 @@ p {
 code {
   font: "DM Mono", monospace;
   line-height: 1.2em;
-  height: 200px;
+  height: 300px;
+}
+
+.image-plus {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.image-plus img {
+  padding: 0;
+  margin: 0;
+}
+
+.plus-description-left {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.plus-description .desciptive-block {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.paddingtop20 {
+  padding-top: 20px;
+}
+
+.fit-cover {
+  object-fit: cover;
+  height: auto;
 }
 
 @media screen and (max-width: 992px) {
@@ -636,7 +668,10 @@ code {
   }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 680px) {
+  .col8 {
+    width: 100%;
+  }
   footer .pattent {
     display: none;
     color: transparent;
