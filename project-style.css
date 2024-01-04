@@ -146,7 +146,8 @@ a {
   --BORDER-COLOR: #dfdfdf;
   --LINK-HOVER: #5c5c5c;
   --LINK-ACTIVE: #333;
-  --HIGHTLIGHT-PETSPHERE: #99087a;
+  --HIGHTLIGHT-PINK: #99087a;
+  --HIGHTLIGHT-BLUE: #074d9d;
   --FONT: "DM Sans";
   --FONT-CN: "DM Mono";
 }
@@ -495,8 +496,13 @@ h2 {
   line-height: 1.5em;
 }
 
-.highlight {
-  color: var(--HIGHTLIGHT-PETSPHERE);
+.highlight-pink {
+  color: var(--HIGHTLIGHT-PINK);
+  font-weight: 800;
+}
+
+.highlight-blue {
+  color: var(--HIGHTLIGHT-BLUE);
   font-weight: 800;
 }
 
@@ -529,17 +535,27 @@ p {
   margin-bottom: 10px;
 }
 
-.title {
+.title-pink {
   font-size: 2em;
   margin: 0 auto;
   padding-bottom: 30px;
   padding-top: 10px;
-  color: var(--HIGHTLIGHT-PETSPHERE);
+  color: var(--HIGHTLIGHT-PINK);
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.desciptive-block {
+.title-blue {
+  font-size: 2em;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  color: var(--HIGHTLIGHT-BLUE);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.descriptive-block {
   width: 100%;
   line-height: 1.2em;
 }
@@ -577,7 +593,7 @@ code {
   margin-left: 0;
 }
 
-.plus-description .desciptive-block {
+.plus-description .descriptive-block {
   padding-top: 0;
   margin-top: 0;
 }
@@ -615,7 +631,8 @@ code {
     --BORDER-COLOR: #373737;
     --LINK-HOVER: #cfcdcd;
     --LINK-ACTIVE: #fff;
-    --HIGHTLIGHT-PETSPHERE: #dfc9da;
+    --HIGHTLIGHT-PINK: #f1c2e6;
+    --HIGHTLIGHT-BLUE: #7ab9fc;
   }
 
   .custom-cursor {
