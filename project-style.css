@@ -586,11 +586,17 @@ code {
 .image-plus img {
   padding: 0;
   margin: 0;
+  object-fit: cover;
+  height: auto;
 }
 
 .plus-description-left {
   padding-left: 0;
   margin-left: 0;
+}
+
+.plus-description-right {
+  padding-left: 30px;
 }
 
 .plus-description .descriptive-block {
@@ -600,6 +606,14 @@ code {
 
 .paddingtop20 {
   padding-top: 20px;
+}
+
+.paddingtop30 {
+  padding-top: 30px;
+}
+
+.paddingtop40 {
+  padding-top: 40px;
 }
 
 .fit-cover {
@@ -712,10 +726,26 @@ code {
 }
 
 @media screen and (max-width: 680px) {
+  .image-plus img {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .plus-description-right {
+    padding-left: 0px;
+  }
+
+  .col5,
   .col6,
   .col7,
   .col8,
-  .col9 {
+  .col9,
+  .col10,
+  .col11,
+  .col12,
+  .col13,
+  .col14,
+  .col15 {
     width: 100%;
   }
 
