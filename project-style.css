@@ -147,6 +147,7 @@ a {
   --LINK-HOVER: #5c5c5c;
   --LINK-ACTIVE: #333;
   --HIGHTLIGHT-PINK: #99087a;
+  --HIGHTLIGHT-YELLOW: #eeb200;
   --HIGHTLIGHT-BLUE: #074d9d;
   --FONT: "DM Sans";
   --FONT-CN: "DM Mono";
@@ -506,6 +507,17 @@ h2 {
   font-weight: 800;
 }
 
+.highlight-yellow {
+  color: var(--HIGHTLIGHT-YELLOW);
+  font-weight: 800;
+}
+
+.italic-yellow {
+  color: var(--HIGHTLIGHT-YELLOW);
+  font-weight: 500;
+  font-style: italic;
+}
+
 .overview-pic {
   width: 100%;
   height: auto;
@@ -551,6 +563,16 @@ p {
   padding-bottom: 30px;
   padding-top: 10px;
   color: var(--HIGHTLIGHT-BLUE);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.title-yellow {
+  font-size: 2em;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  color: var(--HIGHTLIGHT-YELLOW);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -649,6 +671,29 @@ code {
   border-radius: 50%; /* Make it round */
 }
 
+.role-list-yellow {
+  list-style: none;
+  padding-left: 0;
+}
+
+.role-list-yellow li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  line-height: 1.2em;
+}
+
+.role-list-yellow li::before {
+  content: "";
+  position: absolute;
+  left: 0em;
+  top: 0.3em;
+  height: 6px;
+  width: 6px;
+  background-color: var(--HIGHTLIGHT-YELLOW); /* Your desired dot color */
+  border-radius: 50%; /* Make it round */
+}
+
 @media screen and (max-width: 992px) {
   .bullet-container {
     flex-direction: column;
@@ -674,6 +719,7 @@ code {
     --LINK-ACTIVE: #fff;
     --HIGHTLIGHT-PINK: #f1c2e6;
     --HIGHTLIGHT-BLUE: #9fcdff;
+    --HIGHTLIGHT-YELLOW: #e1c87e;
   }
 
   .custom-cursor {
