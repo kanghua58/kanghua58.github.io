@@ -272,11 +272,12 @@
           </div>
         </div>
         
-        <div class="image-plus">
-          <img class="col4" src="./image/vibely/1.gif" alt="" />
-          <img class="col4" src="./image/vibely/2.gif" alt="" />
-          <img class="col4" src="./image/vibely/3.gif" alt="" />
-          <img class="col4" src="./image/vibely/4.gif" alt="" />
+
+        <div class="image-plus img-gif">
+          <img class="col4" src="./image/vibely/1_static.jpg" onclick="toggleGif(this, './image/vibely/1.gif', './image/vibely/1_static.jpg')" alt="" />
+          <img class="col4" src="./image/vibely/2_static.jpg" onclick="toggleGif(this, './image/vibely/2.gif', './image/vibely/2_static.jpg')" alt="" />
+          <img class="col4" src="./image/vibely/3_static.jpg" onclick="toggleGif(this, './image/vibely/3.gif', './image/vibely/3_static.jpg')" alt="" />
+          <img class="col4" src="./image/vibely/4_static.jpg" onclick="toggleGif(this, './image/vibely/4.gif', './image/vibely/4_static.jpg')" alt="" />     
         </div>
         
 
@@ -298,11 +299,11 @@
           </div>
         </div>
 
-        <div class="image-plus">
-          <img class="col4" src="./image/vibely/5.gif" alt="" />
-          <img class="col4" src="./image/vibely/6.gif" alt="" />
-          <img class="col4" src="./image/vibely/7.gif" alt="" />
-          <img class="col4" src="./image/vibely/8.gif" alt="" />
+        <div class="image-plus img-gif">    
+          <img class="col4" src="./image/vibely/5_static.jpg" onclick="toggleGif(this, './image/vibely/5.gif', './image/vibely/5_static.jpg')" alt="" />
+          <img class="col4" src="./image/vibely/6_static.jpg" onclick="toggleGif(this, './image/vibely/6.gif', './image/vibely/6_static.jpg')" alt="" />
+          <img class="col4" src="./image/vibely/7_static.jpg" onclick="toggleGif(this, './image/vibely/7.gif', './image/vibely/7_static.jpg')" alt="" />
+          <img class="col4" src="./image/vibely/8_static.jpg" onclick="toggleGif(this, './image/vibely/8.gif', './image/vibely/8_static.jpg')" alt="" />
         </div>
 
       </section>
@@ -402,5 +403,14 @@
         </li>
       </ul>
     </footer>
+    <script>
+      function toggleGif(imgElement, gifSrc, staticSrc) {
+          if (imgElement.src.endsWith('static.jpg')) { 
+              imgElement.src = gifSrc; 
+          } else { 
+              imgElement.src = staticSrc; 
+          }
+      }
+      </script>
   </body>
 </html>

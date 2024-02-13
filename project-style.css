@@ -612,6 +612,10 @@ code {
   height: auto;
 }
 
+.img-gif img {
+  cursor: pointer;
+}
+
 .plus-description-left {
   padding-left: 0;
   margin-left: 0;
