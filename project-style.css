@@ -619,6 +619,7 @@ code {
 .plus-description-left {
   padding-left: 0;
   margin-left: 0;
+  align-self: center;
 }
 
 .plus-description-right {
@@ -696,6 +697,14 @@ code {
   width: 6px;
   background-color: var(--HIGHTLIGHT-YELLOW); /* Your desired dot color */
   border-radius: 50%; /* Make it round */
+}
+
+.new-title {
+  padding-top: 50px;
+}
+
+.gif-show img {
+  padding-top: 30px;
 }
 
 @media screen and (max-width: 992px) {
