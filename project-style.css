@@ -707,6 +707,10 @@ code {
   padding-top: 30px;
 }
 
+#highlight {
+  font-weight: bolder;
+}
+
 @media screen and (max-width: 992px) {
   .bullet-container {
     flex-direction: column;
