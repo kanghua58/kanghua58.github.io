@@ -99,3 +99,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log("success");
 });
 
+
+const sections = document.querySelectorAll("section");
+
+const options = {
+  root: null,
+  threshold: 0.1,
+  rootMargin: "0px 0px -20% 0px",
+};
+
+const observer = new IntersectionObserver(function (entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove("fade-out"); // 移除fade-out类
+      entry.target.classList.add("fade-in"); // 添加fade-in类
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+sections.forEach((section) => {
+  observer.observe(section);
+  section.classList.add("fade-out"); // 初始状态为fade-out
+});
+

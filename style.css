@@ -215,7 +215,8 @@ header .name {
 
 section {
   display: flex;
-  padding-top: 120px;
+  padding-top: 100px;
+  padding-bottom: 20px;
   color: var(--MAIN-FONTCOLOR);
   display: flex;
   flex-wrap: wrap;
@@ -224,6 +225,18 @@ section {
   max-width: 1000px;
   background: var(--MAIN-BACKGROUND);
   margin: 0 auto 1rem auto;
+  border-bottom: 2px var(--BORDER-COLOR) solid;
+  opacity: 1; /* 移除opacity: 0 */
+  transition: opacity 1s ease-out; /* 添加过渡效果 */
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out; /* 添加过渡效果 */
 }
 
 main a {

@@ -94,6 +94,11 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -226,6 +231,17 @@ section {
   background: var(--MAIN-BACKGROUND);
   margin: 0 auto 1rem auto;
   border-bottom: 2px var(--BORDER-COLOR) solid;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
 }
 
 section:last-child {
@@ -710,8 +726,58 @@ code {
 #highlight {
   font-weight: bolder;
 }
+#table-of-contents {
+  padding: 40px;
+  background-color: var(--MAIN-BACKGROUND);
+  border: 1px solid var(--BORDER-COLOR);
+  border-radius: 5px;
+  position: fixed;
+  top: 100px;
+  right: 0px;
+  width: 400px;
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(calc(100% - 40px));
+}
 
-@media screen and (max-width: 992px) {
+#table-of-contents:hover {
+  transform: translateX(0);
+}
+
+#table-of-contents h2 {
+  margin-top: 0;
+  color: var(--MAIN-FONTCOLOR);
+}
+
+#table-of-contents ol {
+  padding-left: 5px;
+}
+
+#table-of-contents li {
+  margin-bottom: 10px;
+  line-height: 1.2em;
+}
+
+#table-of-contents a {
+  color: var(--LINK-ACTIVE);
+  text-decoration: none;
+}
+
+#table-of-contents a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1600px) {
+  #table-of-contents {
+    transform: translateX(calc(100% - 40px));
+  }
+
+  #table-of-contents:hover {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 680px) {
   .bullet-container {
     flex-direction: column;
     align-items: center;
