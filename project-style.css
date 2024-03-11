@@ -747,6 +747,7 @@ code {
 #table-of-contents h2 {
   margin-top: 0;
   color: var(--MAIN-FONTCOLOR);
+  width: 100%;
 }
 
 #table-of-contents ol {
