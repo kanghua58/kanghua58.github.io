@@ -771,6 +771,7 @@ code {
 #table-of-contents .active {
   font-weight: bold;
   text-decoration: underline;
+  color: #000000;
 }
 
 @media screen and (max-width: 1600px) {
