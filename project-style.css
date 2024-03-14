@@ -768,6 +768,11 @@ code {
   text-decoration: underline;
 }
 
+#table-of-contents .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 1600px) {
   #table-of-contents {
     transform: translateX(calc(100% - 40px));

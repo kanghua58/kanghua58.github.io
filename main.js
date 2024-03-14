@@ -1,4 +1,32 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+
+
+    // 获取侧边目录元素
+    const tableOfContents = document.getElementById('table-of-contents');
+    // 获取侧边目录中的所有链接
+    const tocLinks = tableOfContents.querySelectorAll('a');
+
+    function updateActiveSection() {
+        const scrollPosition = window.pageYOffset;
+
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+
+            if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop + sectionHeight - 100) {
+                // 移除所有链接的 'active' 类
+                tocLinks.forEach(link => link.classList.remove('active'));
+
+                // 为当前活动部分的链接添加 'active' 类
+                tocLinks[index].classList.add('active');
+            }
+        });
+    }
+
+    // 添加滚动事件监听器,以更新活动部分
+    window.addEventListener('scroll', updateActiveSection);
+
+  
     // Code related to navigation links and sections
     const navItems = document.querySelectorAll('.nav-item a');
     const internalLinks = document.querySelectorAll('.nav-item a[href^="#"]');
@@ -122,4 +150,5 @@ sections.forEach((section) => {
   observer.observe(section);
   section.classList.add("fade-out"); // 初始状态为fade-out
 });
+
 
