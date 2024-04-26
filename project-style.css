@@ -154,6 +154,7 @@ a {
   --HIGHTLIGHT-PINK: #99087a;
   --HIGHTLIGHT-YELLOW: #eeb200;
   --HIGHTLIGHT-BLUE: #074d9d;
+  --HIGHTLIGHT-PURPLE: #415bc2;
   --FONT: "DM Sans";
   --FONT-CN: "DM Mono";
 }
@@ -509,12 +510,17 @@ h2 {
 }
 
 #meta-data .col4 {
-  padding: 1em 0;
+  padding: 1em 2em;
   line-height: 1.5em;
 }
 
 .highlight-pink {
   color: var(--HIGHTLIGHT-PINK);
+  font-weight: 800;
+}
+
+.highlight-purple {
+  color: var(--HIGHTLIGHT-PURPLE);
   font-weight: 800;
 }
 
@@ -569,6 +575,16 @@ p {
   padding-bottom: 30px;
   padding-top: 10px;
   color: var(--HIGHTLIGHT-PINK);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.title-purple {
+  font-size: 2em;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  color: var(--HIGHTLIGHT-PURPLE);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -715,6 +731,29 @@ code {
   border-radius: 50%; /* Make it round */
 }
 
+.role-list-purple {
+  list-style: none;
+  padding-left: 0;
+}
+
+.role-list-purple li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  line-height: 1.2em;
+}
+
+.role-list-purple li::before {
+  content: "";
+  position: absolute;
+  left: 0em;
+  top: 0.3em;
+  height: 6px;
+  width: 6px;
+  background-color: var(--HIGHTLIGHT-PURPLE); /* Your desired dot color */
+  border-radius: 50%; /* Make it round */
+}
+
 .new-title {
   padding-top: 50px;
 }
@@ -810,6 +849,7 @@ code {
     --HIGHTLIGHT-PINK: #f1c2e6;
     --HIGHTLIGHT-BLUE: #9fcdff;
     --HIGHTLIGHT-YELLOW: #e1c87e;
+    --HIGHTLIGHT-PURPLE: #cecfff;
   }
 
   .custom-cursor {
