@@ -230,6 +230,10 @@ section {
   transition: opacity 1s ease-out; /* 添加过渡效果 */
 }
 
+.noborder {
+  border-bottom: 0px !important;
+}
+
 .fade-in {
   opacity: 1;
 }

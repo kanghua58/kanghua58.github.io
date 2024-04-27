@@ -757,6 +757,10 @@ code {
   border-radius: 50%; /* Make it round */
 }
 
+.noborder {
+  border-bottom: 0px !important;
+}
+
 .new-title {
   padding-top: 50px;
 }
