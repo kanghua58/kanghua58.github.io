@@ -405,7 +405,7 @@ a:active {
 }
 .col16 {
   width: calc((5.5% * 16) + (0.8333333333% * 15));
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 span {
@@ -612,11 +612,14 @@ p {
 .descriptive-block {
   width: 100%;
   line-height: 1.2em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-weight: 500;
 }
 
 .subtitle {
-  font-size: 1.3em;
-  padding-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: 500;
   padding-top: 10px;
   text-transform: capitalize;
   display: block;
