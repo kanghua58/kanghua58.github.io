@@ -203,7 +203,6 @@ header .name {
   letter-spacing: 2px;
   font-weight: 400;
   text-decoration: none;
-  font-size: 1.05em;
   transition: opacity 400ms;
   padding: 5px;
 }
@@ -621,7 +620,7 @@ p {
   font-size: 1.2em;
   font-weight: 500;
   padding-top: 10px;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   display: block;
 }
 
@@ -972,7 +971,7 @@ code {
 
   h2 {
     font-size: 1.3em;
-    line-height: 0.8em;
+    line-height: 1em;
   }
 
   .project-meta {
