@@ -576,7 +576,6 @@ p {
 
 .title-pink {
   font-size: 2em;
-  margin: 0 auto;
   padding-bottom: 30px;
   padding-top: 10px;
   color: var(--HIGHTLIGHT-PINK);
@@ -584,8 +583,7 @@ p {
 }
 
 .title-purple {
-  font-size: 2em;
-  margin: 0 auto;
+  font-size: 1.8em;
   padding-bottom: 30px;
   padding-top: 10px;
   color: var(--HIGHTLIGHT-PURPLE);
@@ -593,8 +591,7 @@ p {
 }
 
 .title-blue {
-  font-size: 2em;
-  margin: 0 auto;
+  font-size: 1.8em;
   padding-bottom: 30px;
   padding-top: 10px;
   color: var(--HIGHTLIGHT-BLUE);
@@ -602,8 +599,7 @@ p {
 }
 
 .title-yellow {
-  font-size: 2em;
-  margin: 0 auto;
+  font-size: 1.8em;
   padding-bottom: 30px;
   padding-top: 10px;
   color: var(--HIGHTLIGHT-YELLOW);
@@ -611,8 +607,7 @@ p {
 }
 
 .title-orange {
-  font-size: 2em;
-  margin: 0 auto;
+  font-size: 1.8em;
   padding-bottom: 30px;
   padding-top: 10px;
   color: var(--HIGHTLIGHT-ORANGE);
@@ -920,6 +915,20 @@ code {
   .project-image img {
     max-width: 100%;
   }
+
+  .title-pink,
+  .title-purple,
+  .title-blue,
+  .title-yellow,
+  .title-orange {
+    font-size: 1.6em;
+    line-height: 1.4em;
+  }
+
+  .h1bold {
+    font-size: 1.7em;
+    line-height: 1.5em;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -996,6 +1005,20 @@ code {
 
   code {
     font-size: 0.9em;
+  }
+
+  .title-pink,
+  .title-purple,
+  .title-blue,
+  .title-yellow,
+  .title-orange {
+    font-size: 1.4em;
+    line-height: 1.3em;
+  }
+
+  .h1bold {
+    font-size: 1.5em;
+    line-height: 1.3em;
   }
 }
 
