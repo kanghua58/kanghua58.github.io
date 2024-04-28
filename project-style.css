@@ -581,7 +581,6 @@ p {
   padding-top: 10px;
   color: var(--HIGHTLIGHT-PINK);
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .title-purple {
@@ -591,7 +590,6 @@ p {
   padding-top: 10px;
   color: var(--HIGHTLIGHT-PURPLE);
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .title-blue {
@@ -601,7 +599,6 @@ p {
   padding-top: 10px;
   color: var(--HIGHTLIGHT-BLUE);
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .title-yellow {
@@ -611,7 +608,6 @@ p {
   padding-top: 10px;
   color: var(--HIGHTLIGHT-YELLOW);
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .title-orange {
@@ -621,7 +617,6 @@ p {
   padding-top: 10px;
   color: var(--HIGHTLIGHT-ORANGE);
   font-weight: 700;
-  text-transform: capitalize;
 }
 
 .descriptive-block {
