@@ -576,40 +576,40 @@ p {
 
 .title-pink {
   font-size: 2em;
-  padding-bottom: 30px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 40px;
   color: var(--HIGHTLIGHT-PINK);
   font-weight: 700;
 }
 
 .title-purple {
   font-size: 1.8em;
-  padding-bottom: 30px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 40px;
   color: var(--HIGHTLIGHT-PURPLE);
   font-weight: 700;
 }
 
 .title-blue {
   font-size: 1.8em;
-  padding-bottom: 30px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 40px;
   color: var(--HIGHTLIGHT-BLUE);
   font-weight: 700;
 }
 
 .title-yellow {
   font-size: 1.8em;
-  padding-bottom: 30px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 40px;
   color: var(--HIGHTLIGHT-YELLOW);
   font-weight: 700;
 }
 
 .title-orange {
   font-size: 1.8em;
-  padding-bottom: 30px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 40px;
   color: var(--HIGHTLIGHT-ORANGE);
   font-weight: 700;
 }
