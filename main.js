@@ -101,6 +101,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log("success");
 });
 
+const mediaQuery = window.matchMedia("(max-width: 580px)");
+
+function handleMediaQueryChange(mediaQuery) {
+  if (mediaQuery.matches) {
+    // 小屏幕设备,直接显示section1,不使用IntersectionObserver
+    sections.forEach((section) => {
+      section.classList.remove("fade-out");
+      section.classList.add("fade-in");
+    });
+  } else {
+    // 非小屏幕设备,使用IntersectionObserver
+    sections.forEach((section) => {
+      observer.observe(section);
+      section.classList.add("fade-out");
+    });
+  }
+}
+
+mediaQuery.addListener(handleMediaQueryChange);
+handleMediaQueryChange(mediaQuery);
+
 
 const sections = document.querySelectorAll("section");
 
@@ -124,5 +145,6 @@ sections.forEach((section) => {
   observer.observe(section);
   section.classList.add("fade-out"); // 初始状态为fade-out
 });
+
 
 
