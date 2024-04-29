@@ -552,6 +552,9 @@ h2 {
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 860px) {
+  .project {
+    filter: none;
+  }
   .col9,
   .col6 {
     width: 100%;

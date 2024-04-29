@@ -879,6 +879,9 @@ code {
 }
 
 @media screen and (max-width: 860px) {
+  .project {
+    filter: none;
+  }
   .col4 {
     width: 50%;
   }
