@@ -501,6 +501,15 @@
         </li>
       </ul>
     </footer>
+    <script>
+      function toggleGif(imgElement, gifSrc, staticSrc) {
+        if (imgElement.src.endsWith(".svg")) {
+          imgElement.src = gifSrc;
+        } else {
+          imgElement.src = staticSrc;
+        }
+      }
+    </script>
     <script src="main.js"></script>
   </body>
 </html>
