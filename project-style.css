@@ -776,6 +776,7 @@ code {
 #highlight {
   font-weight: bolder;
 }
+
 #table-of-contents {
   padding: 40px;
   background-color: var(--MAIN-BACKGROUND);
@@ -787,7 +788,7 @@ code {
   width: 400px;
   z-index: 10;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(calc(100% - 40px));
+  transform: translateX(calc(100% - 20px));
 }
 
 #table-of-contents:hover {
@@ -1062,6 +1063,20 @@ code {
     width: 100%;
     object-fit: cover;
     height: auto;
+  }
+
+  #table-of-contents {
+    padding: 40px;
+    background-color: var(--MAIN-BACKGROUND);
+    border: 1px solid var(--BORDER-COLOR);
+    border-radius: 5px;
+    position: fixed;
+    top: 100px;
+    right: 0px;
+    width: 400px;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(calc(100% - 10px));
   }
 }
 
