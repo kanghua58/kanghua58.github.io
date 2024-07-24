@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Interview App</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        color: #333;
+    }
+    
+    .page {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        min-height: 100vh;
+        box-sizing: border-box;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding-bottom: 80px; /* Space for button container */
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #2c3e50;
+        text-align: center;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .question-section {
+        margin-bottom: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .question-section h2 {
+        font-size: 18px;
+        color: #3498db;
+        margin: 0;
+        padding: 10px 15px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+    }
+    
+    .question-list {
+        display: none;
+        padding: 10px 15px;
+    }
+    
+    .question-item {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .question-item input[type="checkbox"] {
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+    
+    .question-item label {
+        flex: 1;
+        padding-left: 25px;
+        text-indent: -25px;
+        line-height: 1.4;
+    }
+    
+    .button-container {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 800px;
+        padding: 15px 20px;
+        background-color: rgba(255,255,255,0.9);
+        box-sizing: border-box;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    button:hover {
+        background-color: #2980b9;
+    }
+    
+    button:disabled {
+        background-color: #bdc3c7;
+        cursor: not-allowed;
+    }
+    
+    #clearBtn {
+        background-color: #e74c3c;
+    }
+    
+    #clearBtn:hover {
+        background-color: #c0392b;
+    }
+    
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .right-controls {
+        display: flex;
+        align-items: center;
+    }
+    
+    #showListBtn {
+        margin-right: 10px;
+    }
+    
+    #languageSelect {
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #bdc3c7;
+    }
+    
+    #questionDisplay {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin: 40px 0 20px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    #englishQuestion {
+        font-size: 16px;
+        text-align: center;
+        color: #7f8c8d;
+        margin-bottom: 40px;
+    }
+    
+    #selectedQuestionsList {
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        max-width: 300px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    #selectedQuestionsList h3 {
+        margin-top: 0;
+    }
+    
+    #selectedQuestionsList ul {
+        padding-left: 20px;
+        margin: 0;
+    }
+    
+    @media (max-width: 600px) {
+        .button-container {
+            padding: 10px;
+        }
+    
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+    
+        #questionDisplay {
+            font-size: 20px;
+        }
+    }</style>
+</head>
+<body>
+    <div id="questionSelection" class="page">
+        <h1>Select Interview Questions</h1>
+        <p>Click on a section to view and select questions:</p>
+        <div id="questionList"></div>
+        <div class="button-container">
+            <button id="clearBtn">Clear</button>
+            <button id="proceedBtn">Proceed</button>
+        </div>
+    </div>
+
+    <div id="interview" class="page hidden">
+        <div class="top-bar">
+            <button id="backBtn">Back</button>
+            <div class="right-controls">
+                <button id="showListBtn">Show List</button>
+                <select id="languageSelect">
+                    <option value="English">English</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Chinese">Chinese</option>
+                </select>
+            </div>
+        </div>
+        <div id="questionDisplay"></div>
+        <div id="englishQuestion" class="hidden"></div>
+        <div class="button-container">
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+
+    <div id="selectedQuestionsList" class="hidden">
+        <h3>Selected Questions</h3>
+        <ul></ul>
+    </div>
+
+    <script>const questionsBySection = {
+        "About the Competition": [
+            "What kind of training did you do in preparation for the Olympics?",
+            "What do you particularly focus on during the competition?",
+            "What was the most memorable moment for you in this Olympics?",
+            "What has been the most challenging aspect of your competitive career so far?",
+            "How do you evaluate your performance in the Olympics?"
+        ],
+        "Personal Experience": [
+            "How did you feel when you found out you were going to compete in the Olympics?",
+            "Can you share any experiences or stories from the Olympic Village outside of the competition?",
+            "Who is the athlete that has inspired you the most?",
+            "Do you have any pre-match routines or superstitions?",
+            "What methods or tips do you use to ease nervousness?"
+        ],
+        "Future Goals and Prospects": [
+            "What are your goals for your career and competitive life moving forward?",
+            "What are your plans or challenges you want to take on after the Olympics?",
+            "What path are you considering after retirement?",
+            "What do you aim to achieve in future Olympics?"
+        ],
+        "Support System": [
+            "How do you feel about the people who have supported you in your training and competitive life?",
+            "How have the support of your family and friends helped you in continuing your sports career?",
+            "Can you tell us about your relationship with your mental and physical coaches?",
+            "Who has been the coach or mentor that has had the most impact on your growth?"
+        ],
+        "Personal Questions": [
+            "Do you have any hobbies or special skills outside of competition?",
+            "How do you spend your days off?",
+            "What is your favorite food or good luck charm?",
+            "What aspects of other countries or cultures would you like to learn about or are you interested in?"
+        ],
+        "Podium Training (Pre-Qualification) Athlete Interview Questions": [
+            "How did you feel about today's podium training?",
+            "How have you adjusted in preparation for the qualifiers?",
+            "What points did you particularly focus on during today's training?",
+            "Are there any areas you feel need improvement after today's training?",
+            "Do you have any techniques or strategies you are confident about for the qualifiers?",
+            "What new insights did you gain from today's training?",
+            "Which areas do you particularly want to strengthen for the qualifiers?",
+            "How do you feel about the coordination with your teammates and coach?",
+            "What are your current feelings towards the fans who are supporting you?",
+            "Through podium training, how prepared do you feel for the qualifiers?"
+        ],
+        "Post-Qualification Interview Questions": [
+            "How do you feel about your performance today?",
+            "How did you feel at the moment you secured your spot in the finals?",
+            "How did you prepare for the qualifiers?",
+            "What points did you particularly focus on during the qualifiers?",
+            "Now that you have qualified, what are your aspirations for the finals?",
+            "What was the biggest challenge in today's match?",
+            "What was your strategy for the qualifiers?",
+            "What areas do you want to improve for the next round?",
+            "What lessons or insights have you gained from the qualifiers?",
+            "A word for your fans and supporters?"
+        ],
+        "Post-Final Interview Questions for Awarded Athletes": [
+            "Congratulations on winning (or medaling)! How do you feel right now?",
+            "What was the most memorable moment in today's final?",
+            "To whom would you like to dedicate this victory?",
+            "What specific preparations did you make for the finals?",
+            "What do you think were the key factors for your success in this Olympics?",
+            "What are your future plans and goals now that you have won?",
+            "What significance does this victory have for your career?",
+            "A message to your family, friends, and coaches who supported you.",
+            "What have you learned from your experience in this Olympics?",
+            "A word of thanks to your fans."
+        ],
+        "Post-Final Interview Questions for Non-Awarded Athletes": [
+            "How do you feel about your performance in today's final?",
+            "How do you feel now that you have missed the victory?",
+            "What was the most difficult part of the final?",
+            "What improvements are you considering after this result?",
+            "Can you tell us about your preparations and strategy for the final?",
+            "What are your future goals and challenges?",
+            "What lessons or insights did you gain from today's match?",
+            "A message to your family, friends, and coaches who supported you.",
+            "How do you plan to shift your mindset for the next competition?",
+            "A word of thanks to your fans and supporters."
+        ]
+    };
+    
+    const translations = {
+        "English": questionsBySection,
+        "Japanese": {
+            "競技について": [
+                "オリンピックに向けてどのようなトレーニングを行いましたか？",
+                "競技中に特に意識していることは何ですか？",
+                "今回のオリンピックで最も印象に残った瞬間はどの場面でしたか？",
+                "これまでの競技人生で最も困難だった挑戦は何ですか？",
+                "オリンピックでのパフォーマンスについて、ご自身ではどう評価していますか？"
+            ],
+            "個人的な経験について": [
+                "オリンピックに出場することが決まったときの気持ちを教えてください。",
+                "競技以外でオリンピック村での経験やエピソードを教えてください。",
+                "これまでに最も感銘を受けたスポーツ選手は誰ですか？",
+                "試合前に行うルーティーンやジンクスはありますか？",
+                "緊張を和らげるための方法やコツは何ですか？"
+            ],
+            "将来の目標と展望": [
+                "今後のキャリアや競技生活での目標を教えてください。",
+                "オリンピック後の活動予定や挑戦したいことはありますか？",
+                "引退後にどのような道を考えていますか？",
+                "将来的にオリンピックで達成したいことは何ですか？"
+            ],
+            "支えについて": [
+                "トレーニングや競技生活を支えてくれた人たちに対して、どのような感謝の気持ちがありますか？",
+                "スポーツのキャリアを続ける上で、家族や友人のサポートはどのように役立ちましたか？",
+                "メンタルコーチやフィジカルコーチとの関係について教えてください。",
+                "自身の成長に最も影響を与えた指導者やコーチは誰ですか？"
+            ],
+            "パーソナルな質問": [
+                "競技以外での趣味や特技はありますか？",
+                "オフの日にはどのように過ごしていますか？",
+                "好きな食べ物や縁起物は何ですか？",
+                "他の国や文化について学びたいことや興味があることはありますか？"
+            ],
+            "ポディウムトレーニング（予選前）の選手インタビュー質問": [
+                "今日のポディウムトレーニングの感触はどうでしたか？",
+                "予選に向けてどのような調整を行いましたか？",
+                "今日のトレーニングで特に意識したポイントは何ですか？",
+                "トレーニング中に改善が必要だと感じた部分はありますか？",
+                "予選に向けて自信のある技や戦略はありますか？",
+                "今日のトレーニングで新たに気づいたことは何ですか？",
+                "予選に向けて、どの部分を特に強化したいですか？",
+                "チームメイトやコーチとの連携についてどう感じていますか？",
+                "応援してくれるファンに向けて、今の気持ちを教えてください。",
+                "ポディウムトレーニングを通じて、予選への準備がどれだけ整ったと感じますか？"
+            ],
+            "資格予選後の選手インタビュー質問": [
+                "今日のパフォーマンスについてどのように感じていますか？",
+                "予選通過を決めた瞬間の気持ちを教えてください。",
+                "予選に向けてどのような準備をしてきましたか？",
+                "予選中に特に意識したポイントは何ですか？",
+                "予選を通過した今、決勝に向けての意気込みを教えてください。",
+                "今日の試合での最大の挑戦は何でしたか？",
+                "今回の予選での戦略はどのようなものでしたか？",
+                "次のラウンドに向けて、どの部分を改善したいと考えていますか？",
+                "予選を通じて得られた教訓や学びを教えてください。",
+                "応援してくれたファンやサポーターに一言お願いします。"
+            ],
+            "決勝後の受賞選手のインタビュー質問": [
+                "優勝（メダル獲得）おめでとうございます。今の気持ちを教えてください。",
+                "今日の決勝戦で最も印象に残った瞬間は何ですか？",
+                "この勝利を誰に捧げたいですか？",
+                "決勝戦に向けて特に準備したことは何ですか？",
+                "今回のオリンピックでの成功の要因は何だと考えていますか？",
+                "受賞後の今後の予定や目標を教えてください。",
+                "この勝利があなたのキャリアにとってどのような意味を持つと思いますか？",
+                "家族や友人、コーチなど支えてくれた人たちにメッセージをお願いします。",
+                "今回のオリンピックでの経験から学んだことは何ですか？",
+                "ファンの皆さんに感謝の気持ちを一言お願いします。"
+            ],
+            "決勝後未受賞の選手のインタビュー質問": [
+                "今日の決勝戦のパフォーマンスについてどのように感じていますか？",
+                "優勝を逃した今の気持ちを教えてください。",
+                "決勝戦で最も難しかった部分は何ですか？",
+                "今回の結果を受けて、どのような改善点を考えていますか？",
+                "決勝に向けての準備や戦略について教えてください。",
+                "今後の目標や挑戦したいことは何ですか？",
+                "今日の試合を通じて得た教訓や学びは何ですか？",
+                "家族や友人、コーチなど支えてくれた人たちにメッセージをお願いします。",
+                "次の大会に向けて、どのように気持ちを切り替えていきますか？",
+                "応援してくれたファンやサポーターに感謝の気持ちを一言お願いします。"
+            ]
+        },
+        "Korean": {
+            "경기 관련": [
+                "올림픽을 위해 어떤 훈련을 하셨습니까?",
+                "경기 중에 특히 신경 쓰는 것은 무엇입니까?",
+                "이번 올림픽에서 가장 인상 깊었던 순간은 언제였습니까?",
+                "지금까지의 경기 인생에서 가장 어려웠던 도전은 무엇입니까?",
+                "올림픽에서의 퍼포먼스에 대해 자신은 어떻게 평가하십니까?"
+            ],
+            "개인 경험 관련": [
+                "올림픽 출전이 결정되었을 때의 기분을 말씀해 주세요.",
+                "경기 외에 올림픽 마을에서의 경험이나 에피소드를 들려주세요.",
+                "지금까지 가장 감명을 받은 스포츠 선수는 누구입니까?",
+                "경기 전에 하는 루틴이나 징크스가 있습니까?",
+                "긴장을 완화하기 위한 방법이나 팁이 있습니까?"
+            ],
+            "미래의 목표와 전망": [
+                "앞으로의 커리어와 경기 생활에서의 목표를 알려주세요.",
+                "올림픽 후의 활동 계획이나 도전하고 싶은 것이 있습니까?",
+                "은퇴 후 어떤 길을 생각하고 있습니까?",
+                "미래에 올림픽에서 달성하고 싶은 것은 무엇입니까?"
+            ],
+            "지원에 대하여": [
+                "훈련과 경기 생활을 지탱해 준 사람들에 대해 어떤 감사의 마음을 갖고 있습니까?",
+                "스포츠 커리어를 지속하는 데 있어 가족이나 친구들의 지원이 어떻게 도움이 되었습니까?",
+                "멘탈 코치나 피지컬 코치와의 관계에 대해 알려주세요.",
+                "자신의 성장에 가장 큰 영향을 준 지도자나 코치는 누구입니까?"
+            ],
+            "개인적인 질문": [
+                "경기 외에 취미나 특기가 있습니까?",
+                "쉬는 날에는 어떻게 지내십니까?",
+                "좋아하는 음식이나 행운의 물건은 무엇입니까?",
+                "다른 나라나 문화에 대해 배우고 싶은 것이나 흥미가 있는 것은 무엇입니까?"
+            ],
+            "포디움 트레이닝(예선 전) 선수 인터뷰 질문": [
+                "오늘 포디움 트레이닝의 느낌은 어땠나요?",
+                "예선을 위해 어떤 조정을 하셨습니까?",
+                "오늘 트레이닝에서 특히 신경 쓴 포인트는 무엇입니까?",
+                "트레이닝 중에 개선이 필요하다고 느낀 부분이 있습니까?",
+                "예선을 위해 자신 있는 기술이나 전략이 있습니까?",
+                "오늘 트레이닝에서 새롭게 깨달은 점은 무엇입니까?",
+                "예선을 위해 어느 부분을 특히 강화하고 싶습니까?",
+                "팀메이트나 코치와의 연계에 대해 어떻게 느끼고 있습니까?",
+                "응원해주는 팬들에게 현재의 기분을 말씀해 주세요.",
+                "포디움 트레이닝을 통해 예선 준비가 얼마나 되었는지 느끼십니까?"
+            ],
+            "예선 후 선수 인터뷰 질문": [
+                "오늘의 퍼포먼스에 대해 어떻게 느끼십니까?",
+                "예선 통과를 결정한 순간의 기분을 말씀해 주세요.",
+                "예선을 위해 어떤 준비를 해 오셨습니까?",
+                "예선 중에 특히 신경 쓴 포인트는 무엇입니까?",
+                "예선을 통과한 지금, 결승을 향한 각오를 말씀해 주세요.",
+                "오늘 경기에서 가장 큰 도전은 무엇이었습니까?",
+                "이번 예선에서의 전략은 무엇이었습니까?",
+                "다음 라운드를 위해 어떤 부분을 개선하고 싶습니까?",
+                "예선을 통해 얻은 교훈이나 배운 점을 알려주세요.",
+                "응원해 준 팬과 서포터들에게 한 말씀 부탁드립니다."
+            ],
+            "결승 후 수상 선수 인터뷰 질문": [
+                "우승(메달 획득) 축하드립니다. 지금의 기분을 말씀해 주세요.",
+                "오늘 결승전에서 가장 인상 깊었던 순간은 무엇입니까?",
+                "이 승리를 누구에게 바치고 싶습니까?",
+                "결승전을 위해 특별히 준비한 것은 무엇입니까?",
+                "이번 올림픽에서의 성공 요인은 무엇이라고 생각하십니까?",
+                "수상 후의 앞으로의 일정이나 목표를 알려주세요.",
+                "이 승리가 당신의 커리어에 어떤 의미를 갖는다고 생각합니까?",
+                "가족이나 친구, 코치 등 지원해 준 사람들에게 메시지를 부탁드립니다.",
+                "이번 올림픽에서의 경험으로부터 배운 것은 무엇입니까?",
+                "팬들에게 감사의 마음을 한 말씀 부탁드립니다."
+            ],
+            "결승 후 미수상 선수 인터뷰 질문": [
+                "오늘 결승전의 퍼포먼스에 대해 어떻게 느끼십니까?",
+                "우승을 놓친 지금의 기분을 말씀해 주세요.",
+                "결승전에서 가장 어려웠던 부분은 무엇이었습니까?",
+                "이번 결과를 받아들여 어떤 개선점을 생각하고 있습니까?",
+                "결승을 위한 준비나 전략에 대해 알려주세요.",
+                "앞으로의 목표나 도전하고 싶은 것은 무엇입니까?",
+                "오늘 경기를 통해 얻은 교훈이나 배운 점은 무엇입니까?",
+                "가족이나 친구, 코치 등 지원해 준 사람들에게 메시지를 부탁드립니다.",
+                "다음 대회를 위해 어떻게 마음을 바꾸고 계십니까?",
+                "응원해 준 팬과 서포터들에게 감사의 마음을 한 말씀 부탁드립니다."
+            ]
+        },
+        "Chinese": {
+            "关于比赛": [
+                "为了备战奥运会，你进行了哪些训练？",
+                "在比赛中，你特别注意什么？",
+                "本次奥运会中，哪一个瞬间让你最为难忘？",
+                "在你的比赛生涯中，最困难的挑战是什么？",
+                "你如何评价自己在奥运会上的表现？"
+            ],
+            "关于个人经历": [
+                "当得知将参加奥运会时，你的心情是怎样的？",
+                "除了比赛，你在奥运村里有什么特别的经历或故事吗？",
+                "到目前为止，哪位运动员对你的影响最深？",
+                "在比赛前，你有固定的习惯或迷信吗？",
+                "你有什么缓解紧张的技巧或方法吗？"
+            ],
+            "关于未来的目标与展望": [
+                "你未来的职业生涯和比赛生活目标是什么？",
+                "奥运会后，你有哪些活动计划或想要挑战的事情？",
+                "退役后，你打算选择哪条道路？",
+                "在未来的奥运会上，你希望实现什么目标？"
+            ],
+            "关于支持": [
+                "对于那些在训练和比赛生活中支持你的人，你有怎样的感谢之情？",
+                "在你的体育生涯中，家人和朋友的支持起到了什么作用？",
+                "请谈谈你与心理教练和体能教练的关系。",
+                "哪位教练或指导者对你的成长影响最大？"
+            ],
+            "个人问题": [
+                "除了比赛，你有什么爱好或特长？",
+                "休息日时，你是如何度过的？",
+                "你喜欢的食物或吉祥物是什么？",
+                "关于其他国家或文化，你有什么想了解或感兴趣的事情吗？"
+            ],
+            "预赛前的问题": [
+                "今天的台阶训练感觉如何？",
+                "为预选赛做了哪些调整？",
+                "今天的训练中特别注意了哪些点？",
+                "训练中有哪些感觉需要改进的部分？",
+                "对于预选赛，您有信心的技巧或策略是什么？",
+                "今天的训练中发现了什么新的事情？",
+                "针对预选赛，您特别想加强哪些部分？",
+                "对于队友和教练的配合，您感觉如何？",
+                "面对支持您的粉丝，现在的心情如何？",
+                "通过台阶训练，您感觉对预选赛的准备如何？"
+            ],
+            "预选赛后的选手采访问题": [
+                "对于今天的表现，你有什么感想？",
+                "当确定通过预选赛时，你的心情如何？",
+                "为了预选赛，你进行了哪些准备？",
+                "在预选赛中，你特别注意了哪些要点？",
+                "现在通过了预选赛，请谈谈你对决赛的期待。",
+                "今天比赛中最大的挑战是什么？",
+                "本次预选赛的策略是什么？",
+                "对于下一轮，你希望改进哪些部分？",
+                "请分享通过预选赛后获得的经验和教训。",
+                "对于支持你的粉丝和支持者，你有什么想说的吗？"
+            ],
+            "决赛后获奖选手的采访问题": [
+                "恭喜你获得冠军（奖牌），请谈谈你的感受。",
+                "今天的决赛中，最让你印象深刻的瞬间是什么？",
+                "你想把这次胜利献给谁？",
+                "为了决赛，你特别做了哪些准备？",
+                "本次奥运会能取得这样好的成绩，原因是什么？",
+                "获奖后，你接下来的计划和目标是什么？",
+                "这次胜利对你的职业生涯有什么意义？",
+                "请给支持你的家人、朋友和教练们留个言。",
+                "从本次奥运会的经验中，你学到了什么？",
+                "请对你的粉丝们说一句感谢的话。"
+            ],
+            "决赛后未获奖选手的采访问题": [
+                "对于今天的决赛表现，你有什么感想？",
+                "错失冠军后的感受是怎样的？",
+                "决赛中，最困难的部分是什么？",
+                "针对本次结果，你认为有哪些需要改进的地方？",
+                "请谈谈为决赛所做的准备和策略。",
+                "你未来的目标和想挑战的事情是什么？",
+                "通过今天的比赛，你学到了什么？",
+                "请给支持你的家人、朋友和教练们留个言。",
+                "面对下一个比赛，你会如何调整心态？",
+                "对于支持你的粉丝和支持者，你有什么想说的吗？"
+            ]
+        }
+    };
+    
+    
+    let selectedQuestions = [];
+    let currentQuestionIndex = 0;
+    let currentLanguage = "English";
+    
+    const questionList = document.getElementById("questionList");
+    const clearBtn = document.getElementById("clearBtn");
+    const proceedBtn = document.getElementById("proceedBtn");
+    const backBtn = document.getElementById("backBtn");
+    const showListBtn = document.getElementById("showListBtn");
+    const languageSelect = document.getElementById("languageSelect");
+    const questionDisplay = document.getElementById("questionDisplay");
+    const englishQuestion = document.getElementById("englishQuestion");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const questionSelection = document.getElementById("questionSelection");
+    const interview = document.getElementById("interview");
+    const selectedQuestionsList = document.getElementById("selectedQuestionsList");
+    
+    function populateQuestions() {
+        for (const [section, questions] of Object.entries(questionsBySection)) {
+            const sectionDiv = document.createElement("div");
+            sectionDiv.className = "question-section";
+            sectionDiv.innerHTML = `
+                <h2>${section}</h2>
+                <div class="question-list">
+                    ${questions.map((question, index) => `
+                        <div class="question-item">
+                            <input type="checkbox" id="${section}-q${index}" value="${section}|${index}">
+                            <label for="${section}-q${index}">${question}</label>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            questionList.appendChild(sectionDiv);
+    
+            sectionDiv.querySelector('h2').addEventListener('click', () => {
+                sectionDiv.querySelector('.question-list').style.display = 
+                    sectionDiv.querySelector('.question-list').style.display === 'none' ? 'block' : 'none';
+            });
+        }
+    }
+    
+    function updateButtons() {
+        prevBtn.disabled = currentQuestionIndex === 0;
+        nextBtn.disabled = currentQuestionIndex === selectedQuestions.length - 1;
+    }
+    
+    function displayQuestion() {
+        const [section, index] = selectedQuestions[currentQuestionIndex].split('|');
+        let translatedSection = section;
+        
+        if (currentLanguage !== "English") {
+            // Direct mapping of section titles
+            const sectionMapping = {
+                "About the Competition": {"Japanese": "競技について", "Korean": "경기 관련", "Chinese": "关于比赛"},
+                "Personal Experience": {"Japanese": "個人的な経験について", "Korean": "개인 경험 관련", "Chinese": "关于个人经历"},
+                "Future Goals and Prospects": {"Japanese": "将来の目標と展望", "Korean": "미래의 목표와 전망", "Chinese": "关于未来的目标与展望"},
+                "Support System": {"Japanese": "支えについて", "Korean": "지원에 대하여", "Chinese": "关于支持"},
+                "Personal Questions": {"Japanese": "パーソナルな質問", "Korean": "개인적인 질문", "Chinese": "个人问题"},
+                "Podium Training (Pre-Qualification) Athlete Interview Questions": {"Japanese": "ポディウムトレーニング（予選前）の選手インタビュー質問", "Korean": "포디움 트레이닝(예선 전) 선수 인터뷰 질문", "Chinese": "预赛前的问题"},
+                "Post-Qualification Interview Questions": {"Japanese": "資格予選後の選手インタビュー質問", "Korean": "예선 후 선수 인터뷰 질문", "Chinese": "预选赛后的选手采访问题"},
+                "Post-Final Interview Questions for Awarded Athletes": {"Japanese": "決勝後の受賞選手のインタビュー質問", "Korean": "결승 후 수상 선수 인터뷰 질문", "Chinese": "决赛后获奖选手的采访问题"},
+                "Post-Final Interview Questions for Non-Awarded Athletes": {"Japanese": "決勝後未受賞の選手のインタビュー質問", "Korean": "결승 후 미수상 선수 인터뷰 질문", "Chinese": "决赛后未获奖选手的采访问题"}
+            };
+            
+            translatedSection = sectionMapping[section][currentLanguage];
+        }
+        
+        questionDisplay.textContent = translations[currentLanguage][translatedSection][index];
+        
+        if (currentLanguage !== "English") {
+            englishQuestion.textContent = translations["English"][section][index];
+            englishQuestion.classList.remove("hidden");
+        } else {
+            englishQuestion.classList.add("hidden");
+        }
+        
+        updateButtons();
+    }
+    
+    function updateSelectedQuestionsList() {
+        const ul = selectedQuestionsList.querySelector('ul');
+        ul.innerHTML = '';
+        selectedQuestions.forEach(q => {
+            const [section, index] = q.split('|');
+            const li = document.createElement('li');
+            li.textContent = translations["English"][section][index];
+            ul.appendChild(li);
+        });
+    }
+    
+    clearBtn.addEventListener("click", () => {
+        document.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = false);
+        selectedQuestions = [];
+    });
+    
+    proceedBtn.addEventListener("click", () => {
+        selectedQuestions = Array.from(document.querySelectorAll("input[type=checkbox]:checked")).map(cb => cb.value);
+        if (selectedQuestions.length === 0) {
+            alert("Please select at least one question.");
+            return;
+        }
+        questionSelection.classList.add("hidden");
+        interview.classList.remove("hidden");
+        currentQuestionIndex = 0;
+        displayQuestion();
+        updateSelectedQuestionsList();
+    });
+    
+    backBtn.addEventListener("click", () => {
+        interview.classList.add("hidden");
+        questionSelection.classList.remove("hidden");
+    });
+    
+    languageSelect.addEventListener("change", (e) => {
+        currentLanguage = e.target.value;
+        displayQuestion();
+    });
+    
+    showListBtn.addEventListener("mouseenter", () => {
+        selectedQuestionsList.classList.remove("hidden");
+    });
+    
+    showListBtn.addEventListener("mouseleave", () => {
+        setTimeout(() => {
+            if (!selectedQuestionsList.matches(':hover')) {
+                selectedQuestionsList.classList.add("hidden");
+            }
+        }, 300);
+    });
+    
+    selectedQuestionsList.addEventListener("mouseleave", () => {
+        selectedQuestionsList.classList.add("hidden");
+    });
+    
+    prevBtn.addEventListener("click", () => {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            displayQuestion();
+        }
+    });
+    
+    nextBtn.addEventListener("click", () => {
+        if (currentQuestionIndex < selectedQuestions.length - 1) {
+            currentQuestionIndex++;
+            displayQuestion();
+        }
+    });
+    
+    populateQuestions();</script>
+</body>
+</html>
